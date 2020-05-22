@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref, amsmath, graphicx, multicol, amsfonts, subcaption}
+\hypersetup{colorlinks, citecolor=blue, linkcolor=blue}
+
+\frenchspacing
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% Hyperbolic Functions
+\section{Trig and Hyperbolic Functions}
+% Derivatives of Trig Functions
+\subsection{Derivatives of Trig Functions}
+\vspace{-2em}
+\begin{multicols}{2}
+    \begin{align}
+        \frac{d}{dx} \sin(x) &= \cos(x)\\
+        \frac{d}{dx} \cos(x) &= -\sin(x)\\
+        \frac{d}{dx} \tan(x) &= \sec^2(x)
+    \end{align}
+
+    \begin{align}
+        \frac{d}{dx} \csc(x) &= -\csc(x)\cot(x)\\
+        \frac{d}{dx} \sec(x) &= \sec(x)\tan(x)\\
+        \frac{d}{dx} \cot(x) &= -\csc^2(x)
+    \end{align}
+\end{multicols}
+
+% Hyperbolic Trig Derivatives
+\subsection{Derivatives of Hyperbolic Trig Functions}
+\vspace{-2em}
+\begin{multicols}{2}
+    \begin{align}
+        \frac{d}{dx} \sinh(x) &= \cosh(x)\\
+        \frac{d}{dx} \cosh(x) &= \sinh(x)\\
+        \frac{d}{dx} \tanh(x) &= \text{sech}^2(x)
+    \end{align}
+
+    \begin{align}
+        \frac{d}{dx} \text{csch}(x) &= -\text{csch}(x)\ \text{coth}(x)\\
+        \frac{d}{dx} \text{sech}(x) &= -\text{sech}(x) \tanh(x)\\
+        \frac{d}{dx} \text{coth}(x) &= -\text{csch}^2(x)
+    \end{align}
+\end{multicols}
+
+% Inverse Trig Functions
+\subsection{Derivatives of Inverse Trig Functions} \vspace{-2em}
+\begin{multicols}{2}
+    \begin{align}
+        \frac{d}{dx} \sin^{-1} x &= \frac{1}{\sqrt{1-x^2}}\\
+        \frac{d}{dx} \cos^{-1} x &= -\frac{1}{\sqrt{1-x^2}}\\
+        \frac{d}{dx} \tan^{-1} x &= \frac{1}{1 + x^2}
+    \end{align}
+
+    \begin{align}
+        \frac{d}{dx} \csc^{-1} x &= -\frac{1}{|x| \sqrt{x^2-1}}\\
+        \frac{d}{dx} \sec^{-1} x &= \frac{1}{|x| \sqrt{x^2-1}}\\
+        \frac{d}{dx} \cot^{-1} x &= -\frac{1}{1 + x^2}
+    \end{align}    
+\end{multicols}
+
+% Derivatives of Inverse Hyperbolic Functions
+\subsection{Derivatives of Inverse Hyperbolic Functions}
+\vspace{-2em}
+\begin{multicols}{2}
+    \begin{align}
+        \frac{d}{dx} \sinh^{-1} x &= \frac{1}{\sqrt{1+x^2}}\\
+        \frac{d}{dx} \cosh^{-1} x &= \frac{1}{\sqrt{x^2 - 1}}\\
+        \frac{d}{dx} \tanh^{-1} x &= \frac{1}{1-x^2}
+    \end{align}
+
+    \begin{align}
+        \frac{d}{dx} \text{csch}^{-1} &= -\frac{1}{|x| \sqrt{x^2 + 1}}\\
+        \frac{d}{dx} \text{sech}^{-1} &= -\frac{1}{x\sqrt{1-x^2}}\\
+        \frac{d}{dx} \text{coth}^{-1} &= \frac{1}{1-x^2}
+    \end{align}
+\end{multicols}
+
+
+\end{document}
