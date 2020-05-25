@@ -22,6 +22,7 @@ outcomeName <- "classification"
 predictors <- names(trainSet)[!names(trainSet) %in% outcomeName]
 Pred_Profile <- rfe(trainSet[, predictors], trainSet[, outcomeName], rfeControl=control)
 Pred_Profile
+
 # taking top 5 predictors
 predictors <- c("Credit_History", "LoanAmount", "Loan_Amount_Term", "ApplicantIncome", "CoapplicantIncome")
 
