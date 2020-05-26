@@ -37,5 +37,5 @@ table(predictions)
 confusionMatrix(predictions, testSet[,outcomeName])
 
 # plotting the neural net
-library(NeuralNetTools)
-plotnet(model_nnet$finalModel)
+#library(NeuralNetTools)
+#plotnet(model_nnet$finalModel)
