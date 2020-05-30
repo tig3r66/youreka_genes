@@ -15,9 +15,9 @@
 \bibliographystyle{unsrt}
 %% Title
 \title{
-		\usefont{OT1}{bch}{b}{n}
-		\normalfont \normalsize \textsc{STEM Fellowship Big Data Challenge 2020} \\ [10pt]
-		\huge Project Title \\
+    \usefont{OT1}{bch}{b}{n}
+    \normalfont \normalsize \textsc{STEM Fellowship Big Data Challenge 2020} \\ [10pt]
+    \huge Project Title \\
 }
 \selectlanguage{english}
 \usepackage{authblk}
@@ -27,6 +27,42 @@
 \author[2]{Sunand Kannappan}
 \affil[1]{University of Alberta}
 \affil[2]{University of Calgary}
+
+% drawing neural network
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
+\tikzset{
+  every neuron/.style={
+    circle,
+    draw,
+    minimum size=0.5cm
+  },
+  neuron missing/.style={
+    draw=none, 
+    scale=3,
+    text height=0.333cm,
+    execute at begin node=\color{black}$\vdots$
+  },
+}
+
+\usepackage{ifthen}
+\newcommand{\foo}[1]{%
+  \ifthenelse{\equal{#1}{missing}}
+    {}
+    {$H_{\l}$}
+}
+
+\newcommand{\lmao}[1]{%
+  \ifthenelse{\equal{#1}{missing}}
+    {}
+    {$I_{\l}$}
+}
+
+% define flowchart styles
+\tikzstyle{block} = [rectangle, rounded corners, minimum height=4em, draw=black, inner sep=1em]
+\tikzstyle[line] = [draw, -latex']
+\tikzstyle{stop} = [rectangle, rounded corners, minimum width=2cm, minimum height=0.5cm,text centered, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
 
 
 \begin{document}
@@ -65,6 +101,87 @@ Think of this section as a technical manual of sorts, that another team of resea
 
 Because of the straightforward nature of the methods section, this might be the one your team wants to write first. It's essentially you just documenting what your team has already done, which should be no problem to write, since you will already have an established workflow by this point.
 
+\begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}[node distance=6em, auto]
+        % blocks
+        \node [block, text width=16em] (init) {Collect data from GDSC (1,110 cell lines, 251 drugs).};
+        \node [block, below of=init, text width=16em, yshift=-1em] (process) {Filter data: retain drugs with $>$80\% data for cell lines (548 cell lines, 117 drugs). Matrix normalization on IC50 via z-score.};
+        \node [block, below of=process, text width=16em, yshift=-1.25em] (kmeans) {K-means clustering into 2 response groups (verified via elbow graph).};
+        \node [block, below of=kmeans, text width=16em, yshift=-0.5em] (append) {Appended GDSC Affymetrix Human Genome U219 expression data to the IC50 matrix.};
+        \node [block, below of=append, text width=16em, yshift=-1em] (feat) {Feature selection for relevant genes in RNA-seq data via Boruta algorithm. 300 genes selected at $\alpha=0.05$.};
+        \node [block, below of=feat, text width=16em, yshift=-2.25em] (neural) {Hyperparameter optimization of neural network with varying number of hidden layers via grid search. Models evaluated via 5-fold cross-validation.};
+        \node [block, below of=neural, text width=16em, yshift=-1.5em] (annot) {Functional annotation of predictive genes.};
+
+        % arrows
+        \draw [arrow] (init) -- (process);
+        \draw [arrow] (process) -- (kmeans);
+        \draw [arrow] (kmeans) -- (append);
+        \draw [arrow] (append) -- (feat);
+        \draw [arrow] (feat) -- (neural);
+        \draw [arrow] (neural) -- (annot);
+    \end{tikzpicture}
+    \label{fig:flowchart}
+    \caption{Summary of the data analysis pipeline.}
+\end{figure}
+
+\begin{figure*}[!ht]
+    \centering
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    
+        % nodes
+        \foreach \m/\l [count=\y] in {1,missing,n}
+            \node [every neuron/.try, neuron \m/.try] (input-\m) at (0,-1.5-\y) {\lmao{\l}};
+        
+        \foreach \m/\l [count=\y] in {1,2,missing,2n}
+            \node [every neuron/.try, neuron \m/.try] (hidden-\m) at (1.5,-1-\y) {\foo{\l}};
+    
+        \foreach \m/\l [count=\y] in {1,2,3,4,missing,4n}
+            \node [every neuron/.try, neuron \m/.try] (hidden1-\m) at (3,0-\y) {\foo{\l}};
+    
+        \foreach \m/\l [count=\y] in {1,2,3,4,missing,4n}
+            \node [every neuron/.try, neuron \m/.try] (hidden2-\m) at (4.5,0-\y) {\foo{\l}};
+    
+        \foreach \m/\l [count=\y] in {1,2,missing,2n}
+            \node [every neuron/.try, neuron \m/.try] (hidden3-\m) at (6,-1-\y) {\foo{\l}};
+    
+        \foreach \m/\l [count=\y] in {1}
+            \node [every neuron/.try, neuron \m/.try] (output-\m) at (7.5,0-2.5-\y) {$O_1$};
+    
+        % arrows
+        \foreach \l [count=\i] in {1,n}
+            \draw [<-] (input-\l) -- ++(-1,0) node [above, midway] {};
+    
+        \foreach \l [count=\i] in {1,n}
+            \foreach \k [count=\j] in {1,2,2n}
+              \draw [->] (input-\l) -- (hidden-\k);
+    
+        \foreach \l [count=\i] in {1,2,2n}
+            \foreach \k [count=\j] in {1,...,4,4n}
+              \draw [->] (hidden-\l) -- (hidden1-\k);
+    
+        \foreach \l [count=\i] in {1,...,4,4n}
+            \foreach \k [count=\j] in {1,...,4,4n}
+              \draw [->] (hidden1-\l) -- (hidden2-\k);
+    
+        \foreach \l [count=\i] in {1,...,4,4n}
+            \foreach \k [count=\j] in {1,2,2n}
+              \draw [->] (hidden2-\l) -- (hidden3-\k);
+    
+        \foreach \l [count=\i] in {1,2,2n}
+            \foreach \k [count=\j] in {1}
+              \draw [->] (hidden3-\l) -- (output-\k);
+    
+        % labelling layers
+        \foreach \l [count=\x from 0] in {Input\\layer, Hidden\\layer 1, Hidden\\layer 2, Hidden\\layer 3, Hidden\\layer 4, Output\\layer}
+            \node [align=left, above] at (\x*1.5, -0.5) {\l};
+
+    \end{tikzpicture}
+    \label{fig:neural_vis}
+    \caption{Neural network architecture representation with four hidden layers ($n=300$). Inputs include the feature-selected genes from the RNA-seq dataset. Each hidden layer has a dropout rate of 0.3 and is subject to batch normalization.}
+\end{figure*}
+
+
 % Results
 \section{Results}
 The results section is probably next easiest to write after the Methods section, since it essentially boils down to presenting your data. If anything, the production of good, high quality figures is the most important and potentially time-consuming part of this. However, make sure to not analyze any of your results here! All of that belongs in the discussion.
@@ -81,11 +198,6 @@ Including figures into \LaTeX\ can seem intimidating at first, but Overleaf make
 \end{verbatim}
 }
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{Figures/test.png}
-  \caption{Notice how \LaTeX\ automatically numbers this figure.}
-\end{figure}
 
 
 % Discussion
