@@ -6,7 +6,7 @@
 \usepackage[T1]{fontenc}
 
 % definign page geometry
-\usepackage[a4paper, top=3cm, bottom=2cm, left=3cm, right=3cm, marginparwidth=1.75cm]{geometry}
+\usepackage[a4paper, top=2cm, bottom=2cm, left=3cm, right=2cm, marginparwidth=1.75cm]{geometry}
 \usepackage{caption, subcaption}
 \captionsetup[table]{skip=10pt}
 \captionsetup[subfigure]{justification=justified,singlelinecheck=false}
@@ -298,6 +298,11 @@ These results suggest that the developed transcriptomic deep learning model is a
 
 % Discussion
 \section{Discussion}
+
+It is well known that there is substantial heterogeneity with respect to chemotherapeutic response between, and among, cancer types. Though there have been multiple attempts to identify molecular and clinical features predictive of response to particular targeted therapies, there remains considerable variability within subgroups identified using these factors. In this study, we attempt to accurately stratify cancer cell lines into defined groups based on response to a large range of chemotherapeutics, and create a deep learning transcriptomic model capable of accurately categorizing samples into these defined groups. Using cell-line chemotherapeutic efficacy data obtained from GDSC, we employ unsupervised clustering techniques to identify two defined therapeutic response groups with significantly different responses to a multitude to standard chemotherapies. We show that these clusters outperform classical methods of stratifying samples into chemotherapeutic categories based on clinical and molecular criteria. Following this, we use a biologically agnostic feature selection algorithm, Boruta, to reduce the original set of 16,382 genes to a subset of 300 genes and their associated IC$_{50}$. These were fed into neural networks, which were then optimized. We determined from confusion matrices and ROC curve analysis that the best network architecture included 4 hidden layers.
+
+The comparatively lower accuracy of the neural networks with 1 and 2 hidden layers (82.6\% and 70.8\% respectively) suggests that the therapeutic response cohorts cannot be separated by a linear classifier. Furthermore, the high FNR of the network with 5 hidden layers as compared to the 3 and 4 hidden layer networks indicates overfitting. To this end, either a 3 or 4 hidden layer network is the ideal architecture for analyzing our data. Interestingly, there is no significant difference between AUC for these models (Fig. \ref{fig:roc}). This indicates that the major factor for model evaluation above two hidden layers for this dataset are the FPR and FNR of the classifications.
+
 In this study we developed an accurate deep learning-based model for classifying cancer patients based on RNA expression data into therapeutic response cohorts on a relatively small cell line therapeutic response dataset. Using unsupervised clustering techniques, we segregated cancer patients into two defined therapeutic response groups with significantly different responses to a multitude of standard chemotherapies. [EXPAND HERE]
 
 The relatively low accuracy of the neural networks with 1 and 2 hidden layers (82.6\% and 70.8\% respectively) suggests that the therapeutic response cohorts cannot be separated by a linear classifier. Furthermore, the high FNR of the network with 5 hidden layers as compared to the 3 and 4 hidden layer networks indicates overfitting. To this end, either a 3 or 4 hidden layer network is the ideal architecture for analyzing our data. Interestingly, there is no significant difference between AUC for these models (Fig. \ref{fig:roc}). This indicates that the major factor for model evaluation above two hidden layers for this dataset are the FPR and FNR of the classifications.
