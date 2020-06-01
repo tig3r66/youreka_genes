@@ -102,6 +102,39 @@ Wei-Chien Huang and Mien-Chie Hung.
 \newblock {\em Journal of the Formosan Medical Association}, 108(3):180 -- 194,
   2009.
 
+\bibitem{mapk}
+J~M Nelson and D~W Fry.
+\newblock Akt, mapk (erk1/2), and p38 act in concert to promote apoptosis in
+  response to erbb receptor family inhibition.
+\newblock {\em J Biol Chem}, 276:14842--14847, 2001.
+
+\bibitem{wort}
+S~S Ng, M~S Tsao, and T~Nicklee.
+\newblock Wortmannin inhibits pkb/akt phosphorylation and promotes gemcitabine
+  anti-tumor activity in orthotopic human pancreatic cancer xenografts in
+  immunodeficient mice.
+\newblock {\em Clin Cancer Res}, 7:3269--3275, 2001.
+
+\bibitem{phos}
+S~S~W Ng, M~S Tsao, and S~Chow.
+\newblock Inhibition of phos-phatidylinositide 3-kinase enhances
+  gemcitabine-induced apoptosis in human pancreatic cancer cells.
+\newblock {\em Cancer Res}, 60:5451--5455, 2000.
+
+\bibitem{cholangio}
+K.~Yokoi, A.~Kobayashi, H.~Motoyama, M.~Kitazawa, A.~Shimizu, T.~Notake,
+  T.~Yokoyama, T.~Matsumura, M.~Takeoka, and S.~I. Miyagawa.
+\newblock Survival pathway of cholangiocarcinoma via akt/mtor signaling to
+  escape raf/mek/erk pathway inhibition by sorafenib.
+\newblock {\em Oncology reports}, 39(2):843--850, Feb 2018.
+\newblock LR: 20181202; JID: 9422756; 0 (FOXO1 protein, human); 0 (Forkhead Box
+  Protein O1); 0 (Phenylurea Compounds); 0 (Protein Kinase Inhibitors);
+  25X51I8RD4 (Niacinamide); 9HW64Q8G6G (Everolimus); 9ZOQ3TZI87 (Sorafenib); EC
+  2.7.1.1 (MTOR protein, human); EC 2.7.1.1 (TOR Serine-Threonine Kinases); EC
+  2.7.11.1 (Proto-Oncogene Proteins c-akt); 2017/07/12 00:00 [received];
+  2017/12/07 00:00 [accepted]; 2017/12/19 06:00 [entrez]; 2017/12/19 06:00
+  [pubmed]; 2018/08/24 06:00 [medline]; ppublish.
+
 \bibitem{focal_adhesion}
 Iris Eke and Nils Cordes.
 \newblock Focal adhesion signaling and therapy resistance in cancer.

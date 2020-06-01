@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: manuscript.aux
+The style file: unsrt.bst
+Database file #1: bibliography.bib
+Name 15 in "Joseph A. Sparano and Robert J. Gray and Della F. Makower and Kathleen I. Pritchard and Kathy S. Albain and Daniel F. Hayes and Charles E. Geyer Jr and Elizabeth C. Dees and Matthew P. Goetz and John A. Olson, Jr. and Tracy Lively and Sunil S. Badve and Thomas J. Saphner and Lynne I. Wagner and Timothy J. Whelan, and Matthew J. Ellis and Soonmyung Paik and William C. Wood and Peter M. Ravdin and Maccon M. Keane and Henry L. Gomez Moreno and Pavan S. Reddy and Timothy F. Goggins and Ingrid A. Mayer and Adam M. Brufsky and Deborah L. Toppmeyer and Virginia G. Kaklamani and Jeffrey L. Berenberg and Jeffrey Abrams and George W. Sledge" has a comma at the end for entry adjuvant
+while executing---line 944 of file unsrt.bst
+Warning--can't use both author and editor fields in liu
+Too many commas in name 1 of "Kursa, M., Rudnicki,W." for entry kursa
+while executing---line 944 of file unsrt.bst
+You've used 22 entries,
+            1791 wiz_defined-function locations,
+            592 strings with 9457 characters,
+and the built_in function-call counts, 6181 in all, are:
+= -- 457
+> -- 444
+< -- 1
++ -- 156
+- -- 134
+* -- 581
+:= -- 1063
+add.period$ -- 68
+call.type$ -- 22
+change.case$ -- 21
+chr.to.int$ -- 0
+cite$ -- 23
+duplicate$ -- 206
+empty$ -- 509
+format.name$ -- 134
+if$ -- 1303
+int.to.chr$ -- 0
+int.to.str$ -- 22
+missing$ -- 23
+newline$ -- 115
+num.names$ -- 22
+pop$ -- 24
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 86
+stack$ -- 0
+substring$ -- 416
+swap$ -- 32
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 43
+width$ -- 24
+write$ -- 249
+(There were 2 error messages)

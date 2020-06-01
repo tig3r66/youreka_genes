@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  31 MAY 2020 22:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  1 JUN 2020 00:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -866,22 +866,22 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 (./manuscript.aux)
 \openout1 = `manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
@@ -950,10 +950,10 @@ ABD: EveryShipout initializing macros
 Package todonotes Warning: The length marginparwidth is less than 2cm and will 
 most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
-loading the todonotes package. on input line 101.
+loading the todonotes package. on input line 103.
 
 \AtBeginShipoutBox=\box127
-Package hyperref Info: Link coloring ON on input line 101.
+Package hyperref Info: Link coloring ON on input line 103.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -966,213 +966,193 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count324
 )
-LaTeX Info: Redefining \ref on input line 101.
-LaTeX Info: Redefining \pageref on input line 101.
-LaTeX Info: Redefining \nameref on input line 101.
+LaTeX Info: Redefining \ref on input line 103.
+LaTeX Info: Redefining \pageref on input line 103.
+LaTeX Info: Redefining \nameref on input line 103.
  (./manuscript.out) (./manuscript.out)
 \@outlinefile=\write4
 \openout4 = `manuscript.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+bch on input line 1
-02.
+04.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ot1bch.fd
 File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
-\T1/cmr/m/n/10 pre-ci-sion on-col-ogy ap-proaches have uti-lized
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
-\T1/cmr/m/n/10 molec-u-lar char-ac-ter-is-tics of tu-mours to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
-\T1/cmr/m/n/10 in-form clin-i-cal decision-making, in-clud-ing
- []
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-Underfull \hbox (badness 6927) in paragraph at lines 119--120
-\T1/cmr/m/n/10 sen-si-tiv-ity to chemother-apy is het-ero-ge-neous
- []
-
-
-Underfull \hbox (badness 5431) in paragraph at lines 119--120
+Underfull \hbox (badness 5431) in paragraph at lines 121--122
 \T1/cmr/m/n/10 can me-di-ate drug re-sponse, re-cent ad-vances
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 []\T1/cmr/m/n/10 While pre-vi-ous stud-ies have de-vel-oped
- []
-
-
-Underfull \hbox (badness 7221) in paragraph at lines 121--122
-\T1/cmr/m/n/10 with ac-com-pa-ny-ing gene ex-pres-sion pro-fil-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
-\T1/cmr/m/n/10 of avail-able tran-scrip-tomic data. How-ever,
  []
 
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
-[]\T1/cmr/m/n/10 As such, we set out to gen-er-ate a
+Underfull \hbox (badness 6608) in paragraph at lines 133--134
+\T1/cmr/m/n/10 we em-ployed a bi-o-log-i-cally ag-nos-tic fea-ture
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 123--124
-\T1/cmr/m/n/10 pre-dic-tor of can-di-date chemother-a-peu-tics for
- []
-
-
-Underfull \hbox (badness 7558) in paragraph at lines 131--132
-\T1/cmr/m/n/10 groups based on chemother-a-peu-tic re-sponse.
- []
-
-
-Underfull \hbox (badness 6236) in paragraph at lines 131--132
+Underfull \hbox (badness 6236) in paragraph at lines 133--134
 \T1/cmr/m/n/10 rel-e-vant genes for our neu-ral net-work. We
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 \T1/cmr/m/n/10 abil-ity of tran-scrip-tomic dys-reg-u-la-tion in
  []
 
 
-Underfull \hbox (badness 6445) in paragraph at lines 135--136
-\T1/cmr/m/n/10 In ad-di-tion, the ac-quired dataset con-tained
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+\T1/cmr/m/n/10 var-i-ous tu-mour types, and is thought to
  []
 
 
-Underfull \hbox (badness 6592) in paragraph at lines 164--164
+Underfull \hbox (badness 6592) in paragraph at lines 166--166
 |\T1/cmr/bx/n/10 Identification of pan-cancer ther-a-peu-tic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-\T1/cmr/m/n/10 re-sponse co-horts. Gen-er-al-ized dif-fer-ences in
+Underfull \hbox (badness 6268) in paragraph at lines 169--170
+\T1/cmr/m/n/10 then uti-lized to as-sign cell line can-di-dates
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-\T1/cmr/m/n/10 clus-ters was also vi-su-al-ized us-ing prin-ci-pal
+Underfull \hbox (badness 7777) in paragraph at lines 169--170
+\T1/cmr/m/n/10 to ap-pro-pri-ate ther-a-peu-tic re-sponse co-horts.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
+\T1/cmr/m/n/10 Gen-er-al-ized dif-fer-ences in chemother-a-peu-tic
  []
 
 [2]
-<Figures/pca_m/body_system.png, id=95, 803.0pt x 501.875pt>
+<Figures/pca_m/body_system.png, id=96, 803.0pt x 501.875pt>
 File: Figures/pca_m/body_system.png Graphic file (type png)
 <use Figures/pca_m/body_system.png>
-Package pdftex.def Info: Figures/pca_m/body_system.png  used on input line 175.
+Package pdftex.def Info: Figures/pca_m/body_system.png  used on input line 177.
 
 (pdftex.def)             Requested size: 227.62206pt x 142.26239pt.
-<Figures/pca_m/tumortype.png, id=97, 803.0pt x 501.875pt>
+<Figures/pca_m/tumortype.png, id=98, 803.0pt x 501.875pt>
 File: Figures/pca_m/tumortype.png Graphic file (type png)
 <use Figures/pca_m/tumortype.png>
-Package pdftex.def Info: Figures/pca_m/tumortype.png  used on input line 182.
+Package pdftex.def Info: Figures/pca_m/tumortype.png  used on input line 184.
 (pdftex.def)             Requested size: 220.79367pt x 137.9969pt.
 
-Overfull \hbox (4.44336pt too wide) in paragraph at lines 173--186
+Overfull \hbox (4.44336pt too wide) in paragraph at lines 175--188
  [][]  [] 
  []
 
-<Figures/pca_m/tp53.png, id=98, 803.0pt x 501.875pt>
+<Figures/pca_m/tp53.png, id=99, 803.0pt x 501.875pt>
 File: Figures/pca_m/tp53.png Graphic file (type png)
 <use Figures/pca_m/tp53.png>
-Package pdftex.def Info: Figures/pca_m/tp53.png  used on input line 189.
+Package pdftex.def Info: Figures/pca_m/tp53.png  used on input line 191.
 (pdftex.def)             Requested size: 227.62206pt x 142.26239pt.
-<Figures/pca_m/kras.png, id=99, 803.0pt x 501.875pt>
+<Figures/pca_m/kras.png, id=100, 803.0pt x 501.875pt>
 File: Figures/pca_m/kras.png Graphic file (type png)
 <use Figures/pca_m/kras.png>
-Package pdftex.def Info: Figures/pca_m/kras.png  used on input line 196.
+Package pdftex.def Info: Figures/pca_m/kras.png  used on input line 198.
 (pdftex.def)             Requested size: 227.62206pt x 142.26239pt.
 
-Overfull \hbox (4.44336pt too wide) in paragraph at lines 187--200
+Overfull \hbox (4.44336pt too wide) in paragraph at lines 189--202
  [][]  [] 
  []
 
-<Figures/pca.png, id=108, 630.355pt x 542.025pt>
+<Figures/pca.png, id=109, 1017.8025pt x 735.74875pt>
 File: Figures/pca.png Graphic file (type png)
 <use Figures/pca.png>
-Package pdftex.def Info: Figures/pca.png  used on input line 211.
-(pdftex.def)             Requested size: 231.13087pt x 198.7425pt.
+Package pdftex.def Info: Figures/pca.png  used on input line 213.
+(pdftex.def)             Requested size: 249.93065pt x 180.67499pt.
 
-Overfull \hbox (3.50882pt too wide) in paragraph at lines 211--212
+Overfull \hbox (22.3086pt too wide) in paragraph at lines 213--214
  [][] 
  []
 
-<Figures/volcano.png, id=109, 432.61626pt x 495.8525pt>
+<Figures/volcano.png, id=110, 432.61626pt x 495.8525pt>
 File: Figures/volcano.png Graphic file (type png)
 <use Figures/volcano.png>
-Package pdftex.def Info: Figures/volcano.png  used on input line 218.
-(pdftex.def)             Requested size: 173.3933pt x 198.7425pt.
+Package pdftex.def Info: Figures/volcano.png  used on input line 220.
+(pdftex.def)             Requested size: 157.62967pt x 180.67499pt.
 
-Overfull \hbox (4.44336pt too wide) in paragraph at lines 209--222
+Overfull \hbox (4.44336pt too wide) in paragraph at lines 211--224
  [][]  [] 
  []
 
-<Figures/heatmap.png, id=110, 1304.875pt x 444.66125pt>
+<Figures/heatmap.png, id=111, 1304.875pt x 444.66125pt>
 File: Figures/heatmap.png Graphic file (type png)
 <use Figures/heatmap.png>
-Package pdftex.def Info: Figures/heatmap.png  used on input line 225.
+Package pdftex.def Info: Figures/heatmap.png  used on input line 227.
 (pdftex.def)             Requested size: 455.24411pt x 155.13167pt.
 [3]
-<Figures/confusion_matrix/cm_combined.png, id=125, 1298.8525pt x 471.7625pt>
+<Figures/confusion_matrix/cm_combined.png, id=127, 1292.83pt x 476.78125pt>
 File: Figures/confusion_matrix/cm_combined.png Graphic file (type png)
 <use Figures/confusion_matrix/cm_combined.png>
 Package pdftex.def Info: Figures/confusion_matrix/cm_combined.png  used on inpu
-t line 244.
-(pdftex.def)             Requested size: 455.24411pt x 165.34969pt.
-<Figures/roc/full_merged.png, id=126, 772.8875pt x 574.145pt>
+t line 246.
+(pdftex.def)             Requested size: 455.24411pt x 167.88716pt.
+<Figures/roc/full_merged.png, id=128, 772.8875pt x 574.145pt>
 File: Figures/roc/full_merged.png Graphic file (type png)
 <use Figures/roc/full_merged.png>
-Package pdftex.def Info: Figures/roc/full_merged.png  used on input line 251.
+Package pdftex.def Info: Figures/roc/full_merged.png  used on input line 253.
 (pdftex.def)             Requested size: 455.24411pt x 338.18193pt.
 
-Underfull \hbox (badness 6910) in paragraph at lines 261--262
+Underfull \hbox (badness 6910) in paragraph at lines 263--264
 \T1/cmr/m/n/10 The neu-ral net was con-structed us-ing the
  []
 
 
-Underfull \hbox (badness 5741) in paragraph at lines 263--264
-\T1/cmr/m/n/10 lay-ers with a 0.3 dropout rate and batch
+Underfull \hbox (badness 5592) in paragraph at lines 265--266
+[]\T1/cmr/m/n/10 The model was rig-or-ously mon-i-tored for
  []
 
-[4 <./Figures/pca_m/body_system.png> <./Figures/pca_m/tumortype.png> <./Figures
-/pca_m/tp53.png> <./Figures/pca_m/kras.png>] [5 <./Figures/pca.png> <./Figures/
-volcano.png> <./Figures/heatmap.png>] [6 <./Figures/confusion_matrix/cm_combine
-d.png> <./Figures/roc/full_merged.png>]
-<Figures/kegg.png, id=164, 1265.72874pt x 534.99875pt>
+(/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+) [4 <./Figures/pca_m/body_system.png> <./Figures/pca_m/tumortype.png> <./Figur
+es/pca_m/tp53.png> <./Figures/pca_m/kras.png>] [5 <./Figures/pca.png> <./Figure
+s/volcano.png> <./Figures/heatmap.png>] [6 <./Figures/confusion_matrix/cm_combi
+ned.png> <./Figures/roc/full_merged.png>]
+<Figures/kegg.png, id=168, 1265.72874pt x 534.99875pt>
 File: Figures/kegg.png Graphic file (type png)
 <use Figures/kegg.png>
-Package pdftex.def Info: Figures/kegg.png  used on input line 284.
+Package pdftex.def Info: Figures/kegg.png  used on input line 286.
 (pdftex.def)             Requested size: 455.24411pt x 192.4198pt.
 
-Underfull \hbox (badness 7099) in paragraph at lines 291--292
+Underfull \hbox (badness 7099) in paragraph at lines 293--294
 \T1/cmr/m/n/10 in-di-cated sub-stan-tially dif-fer-ent re-sponses to
  []
 
 
-Underfull \hbox (badness 6094) in paragraph at lines 291--292
+Underfull \hbox (badness 6094) in paragraph at lines 293--294
 \T1/cmr/m/n/10 chemother-a-pies. Us-ing these dis-tinct ther-apy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--296
-\T1/cmr/m/n/10 ac-cu-rately clas-sify pa-tients into ther-a-peu-tic
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
+\T1/cmr/m/n/10 based on tran-scrip-tome data. We ini-tially
  []
 
 
-Underfull \hbox (badness 6592) in paragraph at lines 295--296
-\T1/cmr/m/n/10 re-sponse co-horts. To bet-ter un-der-stand the
+Underfull \hbox (badness 5607) in paragraph at lines 293--294
+\T1/cmr/m/n/10 Hy-per-pa-ram-e-ter op-ti-miza-tion via grid search
+ []
+
+
+Underfull \hbox (badness 5091) in paragraph at lines 293--294
+\T1/cmr/m/n/10 re-turned sim-i-lar re-sults for each model: 50
+ []
+
+
+Underfull \hbox (badness 6380) in paragraph at lines 293--294
+\T1/cmr/m/n/10 epochs, batch size of 32, Ada-grad as the
+ []
+
+
+Underfull \hbox (badness 6592) in paragraph at lines 293--294
+\T1/cmr/m/n/10 per-formed sim-i-larly with ap-prox-i-mately 90%
  []
 
 
@@ -1181,11 +1161,16 @@ Underfull \hbox (badness 5696) in paragraph at lines 300--301
  []
 
 
-Underfull \hbox (badness 6510) in paragraph at lines 304--305
-\T1/cmr/m/n/10 Akt sig-nalling in can-cer cell lines ex-posed
+Underfull \hbox (badness 7362) in paragraph at lines 300--301
+\T1/cmr/m/n/10 re-sponse be-tween and among can-cer types.
  []
 
-[7] [8 <./Figures/kegg.png>] (./manuscript.bbl
+
+Underfull \hbox (badness 5756) in paragraph at lines 304--305
+\T1/cmr/m/n/10 of var-i-ous can-cer cell lines to con-ven-tional
+ []
+
+[7] (./manuscript.bbl
 Underfull \hbox (badness 5008) in paragraph at lines 4--8
 []\T1/cmr/m/n/10 Akshat Pathak, San-skriti Tan-war, Vivek
  []
@@ -1195,7 +1180,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--15
 \T1/cmr/m/n/10 re-ac-tions to tar-geted and non-targeted
  []
 
-
+[8 <./Figures/kegg.png>]
 Underfull \hbox (badness 7030) in paragraph at lines 17--28
 \T1/cmr/m/n/10 Tim-o-thy J. Whe-lan, Matthew J. El-lis,
  []
@@ -1261,60 +1246,95 @@ Underfull \hbox (badness 6510) in paragraph at lines 99--104
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--127
+Underfull \hbox (badness 10000) in paragraph at lines 112--117
+\T1/cmr/m/n/10 in-hibits pkb/akt phos-pho-ry-la-tion and
+ []
+
+
+Underfull \hbox (badness 6188) in paragraph at lines 112--117
+\T1/cmr/m/n/10 pro-motes gem-c-itabine anti-tumor ac-tiv-ity
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--117
+\T1/cmr/m/n/10 in or-tho-topic hu-man pan-cre-atic can-cer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--137
+\T1/cmr/m/n/10 M. Ki-tazawa, A. Shimizu, T. No-take,
+ []
+
+
+Underfull \hbox (badness 5260) in paragraph at lines 125--137
+\T1/cmr/m/n/10 Threonine Ki-nases); EC 2.7.11.1 (Proto-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--137
+\T1/cmr/m/n/10 [re-ceived]; 2017/12/07 00:00 [ac-cepted];
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--137
+\T1/cmr/m/n/10 [pubmed]; 2018/08/24 06:00 [med-line];
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 151--160
 []\T1/cmr/m/n/10 Theodore Sakel-laropou-los, Kon-stanti-nos
  []
 
 
-Underfull \hbox (badness 7308) in paragraph at lines 118--127
+Underfull \hbox (badness 7308) in paragraph at lines 151--160
 \T1/cmr/m/n/10 Vougas, Son-ali Narang, Fil-ip-pos Koi-nis,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--127
+Underfull \hbox (badness 10000) in paragraph at lines 151--160
 \T1/cmr/m/n/10 Athanas-sios Kotsi-nas, Alexan-der-Poly-zos,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--127
+Underfull \hbox (badness 10000) in paragraph at lines 151--160
 \T1/cmr/m/n/10 Tyler J Moss, Sa-rina Piha-Paul, Hua
  []
 
 
-Underfull \hbox (badness 5431) in paragraph at lines 118--127
+Underfull \hbox (badness 5431) in paragraph at lines 151--160
 \T1/cmr/m/n/10 Zhou, Eleni Kardala, Eleni Dami-an-idou,
  []
 
 
-Underfull \hbox (badness 5607) in paragraph at lines 118--127
+Underfull \hbox (badness 5607) in paragraph at lines 151--160
 \T1/cmr/m/n/10 Pet-ros Sfikakis, Jiri Bartek, Re-becca C
  []
 
 
-Underfull \hbox (badness 5302) in paragraph at lines 118--127
+Underfull \hbox (badness 5302) in paragraph at lines 151--160
 \T1/cmr/m/n/10 Shaw, Rus-sell Petty, Aris-totelis Tsiri-gos,
  []
 
-[9]) [10] [11
+) [10] [11
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 428.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 428.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 427.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 427.
  (./manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 428.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 428.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 427.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 427.
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: AB166E94DB0BBCB8F76DEB4F2AE0D56E;222.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 428.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 427.
  ) 
 Here is how much of TeX's memory you used:
- 23408 strings out of 480608
- 458211 string characters out of 5903631
- 765447 words of memory out of 5000000
- 38770 multiletter control sequences out of 15000+600000
+ 23424 strings out of 480608
+ 458411 string characters out of 5903631
+ 765473 words of memory out of 5000000
+ 38782 multiletter control sequences out of 15000+600000
  545911 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,8n,83p,1411b,982s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,8n,83p,1801b,985s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
@@ -1331,10 +1351,10 @@ ve/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive
 0/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020/
 texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2020/te
 xmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on manuscript.pdf (11 pages, 922008 bytes).
+Output written on manuscript.pdf (11 pages, 849728 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
- 196 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
+ 280 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
+ 47 named destinations out of 1000 (max. 500000)
  199 words of extra memory for PDF output out of 10000 (max. 10000000)
 
