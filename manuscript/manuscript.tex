@@ -92,8 +92,6 @@
 
 \frenchspacing
 
-\setlength{\parskip}{0pt}
-
 
 \begin{document}
 \maketitle
@@ -230,7 +228,7 @@ Following evaluation of existing classifiers, we attempted to create defined cel
 
 
 \subsection{Feature Selection with Boruta}
-In order to develop a transcriptomic model predictive of therapeutic response clusters, we retrieved expression data quantified by the GDSC consortium using the Affymetrix U219 microarray for each candidate cell line. Here, minimally processed CEL files were obtained from ArrayExpress (ascension number E-MTAB-3610) and processed using the affy package in R. The resulting normalized expression matrix for candidate cell lines was then merged with the existing dataset. This addition resulted in the loss of 7 cell lines (2 from cluster A and 5 from cluster B), resulting in the inclusion of 541 cell lines in model generation. The microarray dataset quantified the expression of 16,382 genes; a model based on that many features is likely to overfit, compromising the generalizability of the model on new data. Such a large feature space also adds unnecessary noise and severely limits the accuracy and computational efficiency of the model. We addressed these issues using feature selection via the BorutaPy package in Python 3  \cite{liu}. The BorutaPy package is a feature selection algorithm based on Random Forest classification which iteratively removes features that are statistically less significant than a shuffled version of the same feature \cite{kursa}. Computational efficiency and the resulting feature set quality were motivators for choosing Boruta over other selection algorithms such as univariate selection or recursive feature elimination.
+In order to develop a transcriptomic model predictive of therapeutic response clusters, we retrieved expression data quantified by the GDSC consortium using the Affymetrix U219 microarray for each candidate cell line. Here, minimally processed CEL files were obtained from ArrayExpress (ascension number E-MTAB-3610) and processed using the affy package in R. The resulting normalized expression matrix for candidate cell lines was then merged with the existing dataset. This addition resulted in the loss of 7 cell lines (2 from cluster A and 5 from cluster B), resulting in the inclusion of 541 cell lines in model generation. The microarray dataset quantified the expression of 16,382 genes; a model based on that many features is likely to overfit, compromising the generalizability of the model on new data. Such a large feature space also adds unnecessary noise and severely limits the accuracy and computational efficiency of the model. We addressed these issues feature selection via the BorutaPy package in Python 3  \cite{liu}. The BorutaPy package is a feature selection algorithm based on Random Forest classification which iteratively removes features that are statistically less significant than a shuffled version of the same feature \cite{kursa}. Computational efficiency and the resulting feature set quality were motivators for choosing Boruta over other selection algorithms such as univariate selection or recursive feature elimination.
 
 
 % neural net evaluation figure
