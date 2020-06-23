@@ -1,0 +1,118 @@
+﻿Gene,Target,Pathway,p.adj
+XMD15.27,"CAMK2B, CLK2, DYRK1A, MAST1, STK39",other,1.80E-20
+NPK76.II.72.1,PLK3,mitosis,5.67E-08
+UNC0638,"G9a(EHMT2), GLP(EHMT1)",chromatin  histone methylation,8.21E-08
+YM201636,PYKfyve(FYV1),other,0.72297861
+TG.101348,JAK2,other,1.60E-06
+Genentech.Cpd.10,"AURKA, AURKB",mitosis,0.14909495
+linifanib,RTK,RTK signaling,1.95E-07
+XMD14.99,"EPHB3, CAMK1",RTK signaling,2.63E-26
+CAL.101,PI3K delta,PI3K signaling,3.41E-09
+THZ.2.49,CDK9,cell cycle,0.000807509
+VX.11e,ERK,ERK MAPK signaling,0.622960292
+ZSTK474,PI3K,PI3K signaling,2.74E-08
+TL.1.85,TAK,other,0.002738338
+I.BET.762,"BRD2, BRD3, BRD4",chromatin  other,8.96E-07
+MPS.1.IN.1,MPS1,mitosis,0.595151668
+AR.42,HDAC,chromain  histone acetylation,8.99E-24
+BMS.708163,gamma-secretase,other,1.67E-11
+SNX.2112,HSP90,other,9.04E-12
+AC220,FLT3,RTK signaling,3.81E-26
+BX.912,PDK1 (PDPK1),PI3K signaling,0.178308829
+Y.39983,ROCK,cytoskeleton,5.61E-12
+NG.25,TAK,other,0.023990665
+LY317615,PKCbeta,other,4.46E-05
+tivozanib,VEGFR,RTK signaling,6.07E-20
+PI.103,"PI3K alpha,DNAPK",PI3K signaling,1.18E-06
+TAK.715,p38a,JNK and p38 signaling,0.001687929
+Zibotentan,Endothelin A Receptor,other,2.67E-23
+BHG712,EPHB4,RTK signaling,0.02282648
+KIN001.055,"JAK3, MNK1",other,0.011953085
+GSK690693,AKT,PI3K signaling,3.87E-08
+TL.2.105,CRAF,ERK MAPK signaling,1.32E-19
+GSK1070916,AURKB,mitosis,0.000610872
+Ispinesib.Mesylate,KIF11,mitosis,0.836950118
+GSK2126458,"PI3K, mTOR",PI3K signaling,3.34E-11
+AZD6482,PI3K beta (P3C2B),PI3K signaling,4.74E-13
+SB52334,ALK5,RTK signaling,0.000850707
+X5.Fluorouracil,DNA antimetabolite,DNA replication,0.085661418
+YM.155,BIRC5 (Survivin),apoptosis regulation,7.09E-30
+NSC.207895,MDMX,p53 pathway,0.137584047
+XL.184,"VEGFR, MET, RET, KIT, FLT1, FLT3, FLT4, TIE2,AXL",RTK signaling,0.144732285
+CUDC.101,"HDAC, EGFR",chromain  histone acetylation,5.46E-25
+masitinib,KIT,RTK signaling,0.006176467
+JQ.1,"BRD2, BRD3, BRD4",chromatin  other,0.162320726
+PIK.93,"PI4K,PI3K",PI3K signaling,0.000850707
+MP470,PDGFR,RTK signaling,0.92882639
+AS605240,PI3K gamma,PI3K signaling,2.92E-09
+THZ.2.102.1,CDK7,cell cycle,2.12E-14
+KIN001.244,PDK1 (PDPK1),PI3K signaling,0.019375196
+QL.XI.92,DDR1,RTK signaling,1.12E-12
+KIN001.236,TIE2,other,7.73E-25
+EX.527,SIRT1,other,2.88E-16
+BMS.536924,IGF1R,IGFR signaling,1.34E-15
+QL.X.138,"MNK2, DNAPK, MTOR, BTK, JAK3",other,9.50E-09
+ruxolitinib,"JAK1, JAK2, TYK2",other,5.12E-22
+AT.7519,CDK9,cell cycle,1.71E-08
+VNLG.124,#N/A,#N/A,3.25E-22
+Bicalutamide,Androgen receptor (ANDR),other,0.991024591
+WZ3105,"CLK2, CNSK1E, FLT3, ULK1",other,0.036002362
+Belinostat,HDAC,chromain  histone acetylation,2.11E-26
+STF.62247,Autophagy,other,1.00E-15
+KIN001.260,IKK,other,3.81E-26
+FR.180204,ERK,ERK MAPK signaling,1.52E-06
+XMD13.2,RIPK,other,3.03E-12
+EKB.569,EGFR,EGFR signaling,0.011317708
+QL.XII.47,"BTK, BMX",other,1.87E-12
+CH5424802,ALK,RTK signaling,1.08E-13
+TPCA.1,IKK,other,0.171104764
+CHIR.99021,GSK3B,WNT signaling,2.85E-07
+KIN001.266,"TPL2,COT(M3K8)",other,1.24E-05
+KIN001.270,CDK9,cell cycle,1.04E-24
+KIN001.102,AKT1,PI3K signaling,0.467561532
+BMS.345541,IKBKB,other,0.125145294
+OSI.930,"KIT, VEGFR, PDGFR",RTK signaling,2.72E-10
+OSI.027,mTORC1/2,TOR signaling,1.60E-13
+GSK429286A,ROCK2,cytoskeleton,8.68E-16
+CAY10603,HDAC6,chromain  histone acetylation,5.16E-22
+JW.7.24.1,LCK,other,1.11E-13
+T0901317,LXR,other,1.86E-16
+PHA.793887,CDK-pan,cell cycle,0.439450646
+foretinib,MET,RTK signaling,6.26E-28
+GW.2580,cFMS,RTK signaling,4.65E-11
+CX.5461,RNA Pol I,other,0.000520248
+CP724714,ERBB2,EGFR signaling,0.001863233
+BIX02189,MEK5,other,1.80E-05
+tubastatin.A,HDAC6,chromain  histone acetylation,1.49E-23
+CP466722,ATM,Genome integrity,4.88E-09
+GSK269962A,"ROCK1,ROCK2",cytoskeleton,1.93E-17
+CCT018159,HSP90,other,4.79E-21
+IOX2,EGLN1,other,0.243329807
+UNC1215,L3MBTL3,other,3.42E-21
+JNJ.26854165,MDM2,p53 pathway,1.78E-27
+Tamoxifen,ER,other,0.02679538
+CCT007093,PPM1D,other,0.976363603
+X.5Z..7.Oxozeaenol,#N/A,#N/A,6.58E-52
+GDC.0941,PI3K (class 1) | PI3K,PI3K signaling,5.65E-35
+Trametinib,"MEK1, MEK2",ERK MAPK signaling,1.54E-66
+rTRAIL,"DR4, DR5",apoptosis regulation,0.730288
+RDEA119,"MEK1, MEK2",ERK MAPK signaling,1.74E-58
+piperlongumine,Increases ROS levels,other,4.48E-43
+PLX4720,BRAF,ERK MAPK signaling,0.174303858
+PFI.1,"BRD2, BRD3, BRD4",chromatin  other,1.94E-26
+selumetinib,"MEK1, MEK2",ERK MAPK signaling,6.51E-34
+Temozolomide,DNA akylating agent,DNA replication,9.54E-09
+Bleomycin..50.uM.,#N/A,#N/A,1.05E-51
+Talazoparib,"PARP1, PARP2",Genome integrity,4.61E-31
+EHT.1864,Rac GTPases,cytoskeleton,0.053391122
+Afatinib,"ERBB2, EGFR",EGFR signaling,6.33E-22
+Olaparib,"PARP1, PARP2",Genome integrity,0.018406874
+FK866,NAMPT inhibitor,metabolism,1.05E-18
+SB.505124,TGFbetaR-I (ALK5),other,0.196543575
+SGC0946,DOT1L (Q8TEK3),chromatin  histone methylation,2.09E-14
+AG.014699,"PARP1, PARP2",Genome integrity,0.000410808
+TW.37,"BCL-2, BCL-XL",apoptosis regulation,1.89E-43
+XAV.939,"TNKS1, TNKS2",WNT signaling,4.95E-15
+PF.4708671,p70 S6KA,TOR signaling,0.013268749
+SN.38,TOP1,DNA replication,1.07E-35
+,,,
