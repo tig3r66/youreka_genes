@@ -1,6 +1,7 @@
 library(tidyr)
 library(dplyr)
 library(mclust)
+library(ggplotify)
 library(factoextra)  # PCA
 library(cowplot)     # for consistently-sized plots
 
@@ -50,3 +51,12 @@ responseGroupPlot <- fviz_pca_ind(pc, geom="point", habillage=dfGdsc$pred,
     theme(legend.text=element_text(size=12), legend.title=element_text(size=15)) +
     ggtitle("")
 responseGroupPlot
+
+
+# GRID (NEED TO RUN GDSC2.R AND PCA.R TO GET PLOT OBJECTS) ============
+cowResp <- plot_grid(responseGroupPlot, basic,
+                     ncol=2, nrow=1, align="h",
+                     labels=c("A", "B"))
+cowHeatmap <- plot_grid(as.grob(heatmapPlot), nrow=1, labels=c("C"))
+cowCombined <- plot_grid(cowResp, cowHeatmap, nrow=2, ncol=1)
+cowCombined

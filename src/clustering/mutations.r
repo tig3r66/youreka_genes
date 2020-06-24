@@ -20,8 +20,8 @@ dfGdsc <- merge(dfGdsc, meta_data, "Cell_name")
 scaledGdsc <- as.data.frame(t(scale(t(scale(dfGdsc[, 2:117])))))
 dfGdsc[2:117] <- scaledGdsc
 dfGdsc <- as.data.frame(na.omit(dfGdsc))
-dfGdsc$KRAS <- as.factor(ifelse(dfGdsc$KRAS=="0", "no mutation", "mutation"))
-dfGdsc$TP53 <- as.factor(ifelse(dfGdsc$TP53=="0", "no mutation", "mutation"))
+dfGdsc$KRAS <- as.factor(ifelse(dfGdsc$KRAS=="0", "No mutation", "Mutation"))
+dfGdsc$TP53 <- as.factor(ifelse(dfGdsc$TP53=="0", "No mutation", "Mutation"))
 
 
 # PCA Plot ============
@@ -29,7 +29,7 @@ dfGdsc$TP53 <- as.factor(ifelse(dfGdsc$TP53=="0", "no mutation", "mutation"))
 pc <- princomp(dfGdsc[2:117])
 ## KRAS
 KRASPlot <- fviz_pca_ind(pc, geom="point", habillage=dfGdsc$KRAS,
-                         alpha.ind=1, pointsize=2, legend.title="KRAS Mutation\nStatus",
+                         alpha.ind=1, pointsize=2, legend.title="KRAS\nMutation\nStatus",
                          palette=c("#FF0000", "#2565AE")) +
     theme_bw() +
     theme(axis.text=element_text(size=12), axis.title=element_text(size=15)) +
@@ -40,7 +40,7 @@ KRASPlot
 
 ## TP53 plot
 TP53Plot <- fviz_pca_ind(pc, geom="point", habillage=dfGdsc$TP53,
-                         alpha.ind=1, pointsize=2, legend.title="TP53 Mutation\nStatus",
+                         alpha.ind=1, pointsize=2, legend.title="TP53\nMutation\nStatus",
                          palette=c("#FF0000", "#2565AE")) +
     theme_bw() +
     theme(axis.text=element_text(size=12), axis.title=element_text(size=15)) +
@@ -55,4 +55,3 @@ plot_grid(tissueIdPlot,
           TP53Plot + theme(legend.justification="left"),
           KRASPlot + theme(legend.justification="left"),
           nrow=2, ncol=2, labels=c("A", "B", "C", "D"), align="v")
-

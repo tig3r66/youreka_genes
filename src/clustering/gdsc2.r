@@ -35,9 +35,10 @@ colanno$PATHWAY_NAME <- as.factor(colanno$PATHWAY_NAME)
 rownames(colanno) <- colanno$DRUG_NAME
 colanno$DRUG_NAME <- NULL
 ## generating Heatmap
-pheatmap(dfGdsc, color=inferno(10),
+heatmapPlot <- pheatmap(dfGdsc, color=inferno(10),
     cluster_rows = F, cluster_cols = T,
     kmeans_k = 2, show_rownames=F)
+heatmapPlot
 
 # CLUSTERING ============
 kmeansGdsc <- kmeans(dfGdsc, center=2, iter.max = 10, nstart = 25)
@@ -140,8 +141,8 @@ ggplot(gprofiler, aes(x = reorder(term_name, logp), y = logp, fill=scale(logp)))
   theme(panel.grid.minor=element_blank(),
         panel.grid.major.y=element_blank(),
         panel.grid.major.x=element_line(color="black", size=.1)) +
-  theme(legend.text=element_text(size=13),
-        legend.title=element_text(size=13, vjust=0.85),
+  theme(legend.text=element_text(size=14),
+        legend.title=element_text(size=14, vjust=0.85),
         legend.position="bottom") +
   theme(axis.text=element_text(size=14, color="black"),
         axis.title=element_text(size=14, color="black"))
