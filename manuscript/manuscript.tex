@@ -165,35 +165,9 @@ Following evaluation of existing classifiers, we attempted to create defined cel
 % PCA figures
 \begin{figure*}[!ht]
 	\centering
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=\columnwidth]{Figures/pca_m/body_system.png}
-		\caption{}
-		\label{fig:body_sys}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.97\columnwidth]{Figures/pca_m/tumortype.png}
-		\caption{}
-		\label{fig:tumor_type}
-	\end{subfigure}
-	
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=\columnwidth]{Figures/pca_m/tp53.png}
-		\caption{}
-		\label{fig:tp53}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=\columnwidth]{Figures/pca_m/kras.png}
-		\caption{}
-		\label{fig:kras}
-	\end{subfigure}
+    \includegraphics[width=\textwidth]{Figures/initial_pca.png}
 
-	\caption{Principal component analysis of pan-cancer cell line therapeutic efficacy, generated from IC$_{50}$ values of all available chemotherapeutics.The horizontal axis shows the first principal component, the vertical axis the second component. Cell lines are visualized based on major cancer type classifications, including (\ref{fig:body_sys}) body system of tumour and (\ref{fig:tumor_type}) solid vs. non-solid tumour status. Cell lines were also visualized on major molecular markers, including (\ref{fig:tp53}) TP53 mutation status, and (\ref{fig:kras}) KRAS mutation status. Legends demonstrate visualized colour.}
+	\caption{Principal component analysis of pan-cancer cell line therapeutic efficacy, generated from IC$_{50}$ values of all available chemotherapeutics.The horizontal axis shows the first principal component, the vertical axis the second component. Cell lines are visualized based on major cancer type classifications, including (\textbf{A}) body system of tumour and (\textbf{B}) solid vs. non-solid tumour status. Cell lines were also visualized on major molecular markers, including (\textbf{C}) TP53 mutation status, and (\textbf{D}) KRAS mutation status.}
 	\label{fig:overall_pca}
 \end{figure*}
 
@@ -201,28 +175,9 @@ Following evaluation of existing classifiers, we attempted to create defined cel
 % clustering figure
 \begin{figure*}[!ht]
     \centering
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=2.6in]{Figures/pca.png}
-        \caption{}
-        \label{fig:pca}
-    \end{subfigure}%
-    ~
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=2.5in]{Figures/volcano.png}
-        \caption{}
-        \label{fig:volcano}
-    \end{subfigure}
+    \includegraphics[width=\textwidth]{Figures/clustering.png}
 
-    \begin{subfigure}[t]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/heatmap.png}
-        \caption{}
-        \label{fig:heatmap}
-    \end{subfigure}
-
-    \caption{(\ref{fig:pca}) Principal component analysis of pan-cancer cell line therapeutic efficacy, generated from IC$_{50}$ values of all available chemotherapeutics. The horizontal axis shows the first principal component, the vertical axis the second component. The two identified therapeutic response clusters are indicated in red and blue respectively. (\ref{fig:volcano}) Volcano plot identifying chemotherapeutics with significantly different IC$_{50}$ values between therapeutic response clusters. Drugs identified in red meet the criteria for significance (FDR adjusted $p<0.05$). (\ref{fig:heatmap}) Heatmap of therapeutic IC$_{50}$ for the two identified therapeutic response clusters. Columns represent individual chemotherapies and are clustered according to Euclidean distance. Colours range from yellow to black, with a shift toward the latter indicating increased efficacy of the corresponding chemotherapeutic.}
+    \caption{(\textbf{A}) Principal component analysis of pan-cancer cell line therapeutic efficacy, generated from IC$_{50}$ values of all available chemotherapeutics. The horizontal axis shows the first principal component, the vertical axis the second component. The two identified therapeutic response clusters are indicated in red and blue respectively. (\textbf{B}) Volcano plot identifying chemotherapeutics with significantly different IC$_{50}$ values between therapeutic response clusters. Drugs identified in red meet the criteria for significance (FDR adjusted $p<0.05$). (\textbf{C}) Heatmap of therapeutic IC$_{50}$ for the two identified therapeutic response clusters. Columns represent individual chemotherapies and are clustered according to Euclidean distance. Colours range from yellow to black, with a shift toward the latter indicating increased efficacy of the corresponding chemotherapeutic.}
     \label{fig:clustering}
 \end{figure*}
 
@@ -274,7 +229,7 @@ The dataset was randomly segregated using the Pareto principle where we reserved
 \subsection{Clustering of pan-cancer cell lines identifies two distinct therapeutic response cohorts}
 From the GDSC consortium, we included 548 cell lines (49.4\% of the original cell lines) and 117 (46.6\% of the original drugs) therapeutics for response group clustering. We assessed the ability of common molecular and clinical characteristics to stratify cell lines into groups with similar chemotherapeutic performance by subgrouping cell lines based upon these criteria and plotting them against the first and second principal components. Commonly used measures including the anatomical location and morphologic subtype, as well as TP53 and KRAS mutation status failed to identify defined clusters of cells with similar therapeutic responses (Fig. \ref{fig:overall_pca}).
 
-To identify defined cohorts of pan-cancer cell lines with similar trends in therapeutic sensitivity, we employed unsupervised clustering of retained cell lines. Principal component analysis was used to reduce the dimensionality of the dataset, allowing for visualization of defined therapeutic response groups. This process identified two distinct clusters of therapeutic sensitivity (Fig. \ref{fig:pca}), 362 cell lines identified in response group A, and 186 cell lines identified in response group B. The cohorts perform substantially differently in a subset of therapeutics (Fig. \ref{fig:heatmap}). To quantify differences in therapeutic response between clusters, IC50 values were compared between candidate cell lines (Fig. \ref{fig:volcano}). Of the 117 therapies included, 95 had significant differences in efficacy between the two cohorts identified. This suggests that these cohorts represent groups of cell lines with vastly different therapeutic responses. Therefore the ability to accurately stratify into these cohorts may be a valuable tool for stratification prior to chemotherapeutic treatment. 
+To identify defined cohorts of pan-cancer cell lines with similar trends in therapeutic sensitivity, we employed unsupervised clustering of retained cell lines. Principal component analysis was used to reduce the dimensionality of the dataset, allowing for visualization of defined therapeutic response groups. This process identified two distinct clusters of therapeutic sensitivity (Fig. \ref{fig:clustering}), 362 cell lines identified in response group A, and 186 cell lines identified in response group B. The cohorts perform substantially differently in a subset of therapeutics (Fig. \ref{fig:clustering}). To quantify differences in therapeutic response between clusters, IC50 values were compared between candidate cell lines (Fig. \ref{fig:clustering}). Of the 117 therapies included, 95 had significant differences in efficacy between the two cohorts identified. This suggests that these cohorts represent groups of cell lines with vastly different therapeutic responses. Therefore the ability to accurately stratify into these cohorts may be a valuable tool for stratification prior to chemotherapeutic treatment. 
 
 
 \subsection{Boruta selects 300 genes from the 16,382 gene dataset}
