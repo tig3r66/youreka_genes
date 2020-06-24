@@ -94,7 +94,7 @@ results <- as.data.frame(cbind(results,tempor))
 write.csv(results, "volcano_data.csv")
 
 results <- read.csv("volcano_data.csv")
-results$id <- as.vector(colnames(data))
+results$id <- as.vector(colnames(data[-1]))
 results$classifier <- ifelse(results$p.adj <= 0.01, 1, 0)
 results$padj <- -log10(results$p.adj)
 
@@ -145,3 +145,4 @@ ggplot(gprofiler, aes(x = reorder(term_name, logp), y = logp, fill=scale(logp)))
         legend.position="bottom") +
   theme(axis.text=element_text(size=14, color="black"),
         axis.title=element_text(size=14, color="black"))
+
