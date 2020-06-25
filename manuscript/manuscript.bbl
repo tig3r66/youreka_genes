@@ -1,5 +1,19 @@
 \begin{thebibliography}{10}
 
+\bibitem{drugml}
+Sean Ekins, Ana~C. Puhl, Kimberley~M. Zorn, Thomas~R. Lane, Daniel~P. Russo,
+  Jennifer~J. Klein, Anthony~J. Hickey, and Alex~M. Clark5.
+\newblock Exploiting machine learning for end-to-end drug discovery and
+  development.
+\newblock {\em Nat Mater}, 18(5):435--441, May 2019.
+
+\bibitem{patient_resps}
+Cai Huang, Evan~A. Clayton, Lilya~V. Matyunina, L.~DeEtte McDonald, Benedict~B.
+  Benigno, Fredrik Vannberg, and John~F. McDonald.
+\newblock Machine learning predicts individual cancer patient responses to
+  therapeutic drugs with high accuracy.
+\newblock {\em Sci Rep}, 8:16444, November 2018.
+
 \bibitem{small_mol}
 Akshat Pathak, Sanskriti Tanwar, Vivek Kumar, and Basu~Dev Banarjeec.
 \newblock Present and future prospect of small molecule \& related targeted
@@ -80,6 +94,22 @@ I~F Faneyte, J~G Schrama, J~L Peterse, P~L Remijnse, S~Rodenhuis, and M~J
   markers and relation with outcome.
 \newblock {\em Br J Cancer}, 86:406--412, February 2003.
 
+\bibitem{pheatmap}
+Raivo Kolde.
+\newblock {\em pheatmap: Pretty Heatmaps}, 2019.
+\newblock R package version 1.0.12.
+
+\bibitem{factoextra}
+Alboukadel Kassambara and Fabian Mundt.
+\newblock {\em factoextra: Extract and Visualize the Results of Multivariate
+  Data Analyses}, 2020.
+\newblock R package version 1.0.7.
+
+\bibitem{affy}
+Laurent Gautier, Leslie Cope, Benjamin~M. Bolstad, and Rafael~A. Irizarry.
+\newblock affy---analysis of affymetrix genechip data at the probe level.
+\newblock {\em Bioinformatics}, 20(3):307--315, 2004.
+
 \bibitem{liu}
 Huan Liu.
 \newblock {\em Feature Selection}, pages 402--406.
@@ -90,10 +120,37 @@ Rudnicki~W. Kursa, M.
 \newblock Feature selection with the boruta package.
 \newblock {\em Journal of Statistical Software}, 36(11), 2010.
 
+\bibitem{keras}
+Francois Chollet et~al.
+\newblock Keras, 2015.
+
 \bibitem{pareto}
 Shie-Yui Liong, Soon-Thiam Khu, and Weng-Tat Chan.
 \newblock Derivation of pareto front with genetic algorithm and neural network.
 \newblock {\em Journal of Hydraulic Engineering}, 6(1), January 1998.
+
+\bibitem{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock {\em Journal of Machine Learning Research}, 12:2825--2830, 2011.
+
+\bibitem{imblearn}
+Guillaume Lema{{\^\i}}tre, Fernando Nogueira, and Christos~K. Aridas.
+\newblock Imbalanced-learn: A python toolbox to tackle the curse of imbalanced
+  datasets in machine learning.
+\newblock {\em Journal of Machine Learning Research}, 18(17):1--5, 2017.
+
+\bibitem{hetero}
+Ariel Pribluda, Cecile~C. de~la Cruz, and Erica~L. Jackson.
+\newblock Intratumoral heterogeneity: From diversity comes resistance.
+\newblock {\em Clin Cancer Res}, 21(13):2916--2923, July 2015.
+
+\bibitem{plasticity}
+Corbin~E Meacham and Sean~J Morrison.
+\newblock Tumour heterogeneity and cancer cell plasticity.
+\newblock {\em Nature}, 501:7467, 328-337 2013.
 
 \bibitem{huang_2009}
 Wei-Chien Huang and Mien-Chie Hung.
