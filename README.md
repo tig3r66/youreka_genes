@@ -18,3 +18,6 @@ Within [src/neural_net](src/neural_net/) is the code for feature selection, hype
 - [hyperparameterized_model.ipynb](src/neural_net/hyperparameterized_model.ipynb): grid search for optimal hyperparameters for the neural network architecture.
 - [cv.ipynb](src/neural_net/cv.ipynb): K-folds cross-validation for the neural network architectures analyzed.
 - [layer_eval.ipynb](src/neural_net/layer_eval.ipynb): for model creation and quick investigation of parameters.
+
+## Neural Network Models
+Within [src/neural_net/models](src/neural_net/models) are the trained Keras neural networks for 1, 5, and 10 layers. To load them, use `model = keras.models.load_model('path/to/location')`, where `model` is the object you wish to load the model into.
