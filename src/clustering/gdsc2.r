@@ -37,7 +37,7 @@ colanno$DRUG_NAME <- NULL
 ## generating Heatmap
 heatmapPlot <- pheatmap(dfGdsc, color=inferno(10),
     cluster_rows = F, cluster_cols = T,
-    kmeans_k = 2, show_rownames=F)
+    kmeans_k = 2, show_rownames=F, fontsize=7)
 heatmapPlot
 
 # CLUSTERING ============
@@ -104,12 +104,12 @@ basic <- ggplot(results, aes(x=statistic, y=padj)) +
   theme_bw() +
   geom_hline(yintercept=2, linetype="dashed", color = "black", size=0.3) +
   geom_vline(xintercept=33301, linetype="dashed", color = "black", size=0.3) +
-  geom_point(aes(colour=as.factor(classifier))) +
+  geom_point(aes(colour=as.factor(classifier)), size=.5) +
   theme(legend.position="none") +
   scale_colour_manual(values=c("#2565ae", "#ff0000")) +
   theme(axis.title=element_text(size=15), axis.text=element_text(size=12)) +
   theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank()) +
-  labs(x="Test statistic", y=bquote('-'*~Log[10]*' P'))
+  labs(x="Test statistic", y=bquote('-'*~Log[10]*'P'))
 basic
 
 
@@ -128,22 +128,22 @@ write.csv(comb, "drug_data.csv")
 gprofiler <- read.csv("gProfiler.csv")
 gprofiler <- subset(gprofiler, select=c("adjusted_p_value", "term_name"))
 gprofiler$logp <- -log10(gprofiler$adjusted_p_value)
-ggplot(gprofiler, aes(x = reorder(term_name, logp), y = logp, fill=scale(logp))) +
-  geom_bar(stat = "identity") +
-  coord_flip() +
-  geom_hline(yintercept=1.30103, linetype="dashed", color = "black", size=0.5) +
-  scale_fill_gradient2(low="#f1f7fc", mid = "#83CEFF", high ="#2565AE", name="Z-score") +
+
+ggplot(gprofiler, aes(x=reorder(term_name, logp), y=logp, fill=scale(logp))) +
+  geom_bar(stat="identity") +
+  geom_hline(yintercept=1.30103, linetype="dashed", color="black", size=0.5) +
+  scale_fill_gradient2(low="#f1f7fc", mid="#83CEFF", high="#2565AE", name="Z-score") +
   guides(fill=guide_colourbar(ticks.colour="black", ticks.linewidth=1.5,
-                              frame.colour="black", frame.linewidth=1.5),
+                              frame.colour="black", frame.linewidth=1.25),
          border=element_line(color="black")) +
-  labs(x="", y="-Log10(FDR)") +
+  labs(x="", y=bquote('-'*~Log[10]*'FDR')) +
   theme_bw() +
   theme(panel.grid.minor=element_blank(),
-        panel.grid.major.y=element_blank(),
-        panel.grid.major.x=element_line(color="black", size=.1)) +
-  theme(legend.text=element_text(size=14),
-        legend.title=element_text(size=14, vjust=0.85),
-        legend.position="bottom") +
-  theme(axis.text=element_text(size=14, color="black"),
-        axis.title=element_text(size=14, color="black"))
-
+        panel.grid.major.x=element_blank(),
+        panel.grid.major.y=element_line(color="black", size=.1)) +
+  theme(legend.text=element_text(size=16),
+        legend.title=element_text(size=16, vjust=0.85),
+        legend.position="right") +
+  theme(axis.text=element_text(size=18, color="black"),
+        axis.title=element_text(size=18, color="black")) +
+  theme(axis.text.x = element_text(angle = 30, vjust=0.75, hjust=0.75))
