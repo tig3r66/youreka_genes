@@ -109,7 +109,7 @@
 
 		% Keywords
 		\noindent {\textbf{Keywords}\\
-			clustering, neural network, transcriptomics, chemotherapeutic response, combinatorial biomarker, molecular profile, therapeutic sensitivity, cancer}
+			clustering, neural network, transcriptomics, chemotherapeuticbdc response, combinatorial biomarker, molecular profile, therapeutic sensitivity, cancer}
 	\end{abstract} \vspace{1em}
 ]
 
@@ -291,26 +291,24 @@ We wish to acknowledge the STEM Fellowship for organizing the 2020 Big Data Chal
             \node [every neuron/.try, neuron \m/.try] (input-\m) at (0,-\y) {\lmao{\l}};
         
         \foreach \m/\l [count=\y] in {1,missing,100}
-            \node [every neuron/.try, neuron \m/.try] (hidden-\m) at (1.25,-1.75-\y) {\foo{\l}};
+            \node [every neuron/.try, neuron \m/.try] (hidden-\m) at (1.5,-1.75-\y) {\foo{\l}};
 
         \foreach \m/\l [count=\y] in {1,missing,100}
-            \node [every neuron/.try, neuron \m/.try] (hidden1-\m) at (2.5,-1.75-\y) {\hehe{\l}};
+            \node [every neuron/.try, neuron \m/.try] (hidden1-\m) at (3,-1.75-\y) {\hehe{\l}};
     
         \foreach \m/\l [count=\y] in {1,missing,100}
-            \node [every neuron/.try, neuron \m/.try] (hidden2-\m) at (3.75,-1.75-\y) {\hehetwo{\l}};
+            \node [every neuron/.try, neuron \m/.try] (hidden2-\m) at (4.5,-1.75-\y) {\hehetwo{\l}};
     
         \foreach \m/\l [count=\y] in {1,missing,100}
-            \node [every neuron/.try, neuron \m/.try] (hidden3-\m) at (5,-1.75-\y) {\hehethree{\l}};
+            \node [every neuron/.try, neuron \m/.try] (hidden3-\m) at (6,-1.75-\y) {\hehethree{\l}};
             	
         \foreach \m/\l [count=\y] in {1,missing,100}
-			\node [every neuron/.try, neuron \m/.try] (hidden4-\m) at (6.25,-1.75-\y) {\hehefour{\l}};
+			\node [every neuron/.try, neuron \m/.try] (hidden4-\m) at (7.5,-1.75-\y) {\hehefour{\l}};
     
         \foreach \m/\l [count=\y] in {1}
-            \node [every neuron/.try, neuron \m/.try] (output-\m) at (7.5,0-2.5-\y) {$O_1$};
+            \node [every neuron/.try, neuron \m/.try] (output-\m) at (9,0-2.5-\y) {$O_1$};
 
         % arrows
-        \foreach \l [count=\i] in {1,2,3,4,5,300}
-            \draw [<-] (input-\l) -- ++(-1,0) node [above, midway] {};
     
     	% input to hidden 1
         \foreach \l [count=\i] in {1,2,3,4,5,300}
@@ -342,12 +340,9 @@ We wish to acknowledge the STEM Fellowship for organizing the 2020 Big Data Chal
             \foreach \k [count=\j] in {1}
               \draw [->] (hidden4-\l) -- (output-\k);
 
-        \foreach \l [count=\i] in {1}
-            \draw [->] (output-\l) -- ++(+1,0) node [above, midway] {};
-
         % labelling layers
         \foreach \l [count=\x from 0] in {Input\\layer, Hidden\\layer 1, Hidden\\layer 2, Hidden\\layer 3, Hidden\\layer 4, Hidden\\layer 5, Output\\layer}
-            \node [align=left, above] at (\x*1.25, -0.5) {\l};
+            \node [align=left, above] at (\x*1.5, -0.5) {\l};
 
     \end{tikzpicture}
     \caption{Neural network architecture representation with 5 hidden layers (300 inputs). Inputs include the feature-selected genes from the cell line microarray dataset. Each hidden layer has an L2 kernel regularization ($\lambda=10^{-3}$) and a dropout rate of 0.3. All hidden layers are subject to batch normalization.}
