@@ -346,7 +346,7 @@ We wish to acknowledge the STEM Fellowship for organizing the 2020 Big Data Chal
             \node [align=left, above] at (\x*1.5, -0.5) {\l};
 
     \end{tikzpicture}
-    \caption{Neural network architecture representation with 5 hidden layers (300 inputs). Inputs include the feature-selected genes from the cell line microarray dataset. Each hidden layer has an L2 kernel regularization ($\lambda=10^{-3}$) and a dropout rate of 0.3. All hidden layers are subject to batch normalization.}
+    \caption{Neural network architecture representation with 5 hidden layers (300 inputs). Inputs include the feature-selected genes from the cell line microarray dataset. Each hidden layer is batch-normalized with an L2 kernel regularization penalty ($\lambda=10^{-3}$) and a dropout rate of 0.3.}
     \label{fig:neural_vis}
 \end{figure*}
 
