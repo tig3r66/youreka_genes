@@ -14,7 +14,7 @@ Within [src/neural_net](src/neural_net/) is the code for feature selection, hype
 - [boruta_trials.ipynb](src/neural_net/boruta_trials.ipynb): the Boruta algorithm to select statistically relevant genes.
 - [data_split.ipynb](src/neural_net/data_split.ipynb): splits data into X_train, X_test, y_train, and y_test datasets (80% training, 20% testing).
 - [build_fns.py](src/neural_net/build_fns.py): build functions for neural networks with 1, 5, 10, and 15 hidden layers.
-- [grid_params.ipynb](src/neural_net/grid_params.ipynb): grid search for optimal hyperparameters for the neural network architecture. *Warning:* 10 and 15 layer gridsearch is extremely computationally expensive. Ensure that you have at least 32 gb of RAM before running.
+- [grid_params.ipynb](src/neural_net/grid_params.ipynb): grid search for optimal hyperparameters for the neural network architecture. **Warning:** 10 and 15 layer gridsearch is extremely computationally expensive. Ensure that you have at least 32 gb of RAM before running.
 - [cv_stratified.ipynb](src/neural_net/cv_stratified.ipynb): K-folds stratified cross-validation for the neural network architectures analyzed.
 
 ## Neural Network Models
