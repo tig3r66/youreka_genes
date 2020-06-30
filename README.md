@@ -18,4 +18,4 @@ Within [src/neural_net](src/neural_net/) is the code for feature selection, hype
 - [cv_stratified.ipynb](src/neural_net/cv_stratified.ipynb): K-folds stratified cross-validation for the neural network architectures analyzed.
 
 ## Neural Network Models
-Within [src/neural_net/models](src/neural_net/models) are the trained Keras neural networks with 1, 5, 10, and 15 hiudden layers. To load them, use `model = keras.models.load_model('path/to/location')`, where `model` is the object you wish to load the model into.
+Within [src/neural_net/models](src/neural_net/models) are the trained Keras neural networks with 1, 5, 10, and 15 hiudden layers. To load them, use `model = tensorflow.keras.models.load_model('path/to/location/model.h5')`, where `model` is the object you wish to load the model into and `model.h5` is the trained model you wish to load.
