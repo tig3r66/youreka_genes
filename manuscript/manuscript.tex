@@ -12,7 +12,7 @@
 \captionsetup[subfigure]{justification=justified,singlelinecheck=false}
 
 % Useful packages
-\usepackage{amsmath, graphicx, natbib, multicol, booktabs, float, abstract, placeins}
+\usepackage{amsmath, graphicx, natbib, multicol, booktabs, float, abstract, placeins, mathtools}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \bibliographystyle{unsrt}
@@ -105,7 +105,7 @@
 \twocolumn[
 	\maketitle
 	\begin{abstract}
-		Precision oncology approaches have recently begun to inform clinical decision-making in the context of chemotherapeutic regimen. High-throughput technology has enabled machine learning algorithms to utilize molecular characteristics of tumours to generate personalized treatments, revealing relationships between genomic alterations and drug sensitivity. However, precision oncology studies have yet to generate a predictive biomarker incorporating gene expression profiles to stratify tumours into similar pan-drug sensitivity profiles. Here we show that a 10 hidden layer neural network accurately classifies pan-cancer cell lines into responder and non-responder groups with respect to a pan-drug dataset with 90.8\% accuracy (AUC = 0.872 $\pm$ 0.054). From unsupervised clustering algorithms, we found that a cohort of cell line gene expression data from the Genomics of Drug Sensitivity in Cancer could be clustered into two response groups with significant difference in pan-drug chemotherapeutic sensitivity. Due to the high dimensional nature of the microarray data, we used the Boruta feature selection algorithm was used to identify genes of the highest predictive value; the 300 genes selected was enriched primarily for the focal adhesion, ECM-receptor and proteoglycan interaction pathways. Using the selected genes, a deep learning neural network was developed to predict response groups. The high accuracy of the neural network validates our postulate that cell lines with similar gene expression profiles present similar pan-drug chemotherapeutic sensitivity, and it suggests the potential utility of similar combinatorial biomarkers for the selection of potent candidate drugs. Given that not all tumours present with targetable features and are treated with less targeted and consequently more cytotoxic chemotherapies, our computational framework allows for the identification of candidate drugs for treatments that maximize therapeutic response and minimize cytotoxic burden. \vspace{1em}
+		Precision oncology approaches have recently begun to inform clinical decision-making in the context of chemotherapeutic regimen. High-throughput technology has enabled machine learning algorithms to utilize molecular characteristics of tumours to generate personalized treatments, revealing relationships between genomic alterations and drug sensitivity. However, precision oncology studies have yet to generate a predictive biomarker incorporating gene expression profiles to stratify tumours into similar pan-drug sensitivity profiles. Here we show that a 10 hidden layer neural network accurately classifies pan-cancer cell lines into responder and non-responder groups with respect to a pan-drug dataset with 89.0\% accuracy (AUC = 0.904, weighted F1 score = 0.89). From unsupervised clustering algorithms, we found that a cohort of cell line gene expression data from the Genomics of Drug Sensitivity in Cancer could be clustered into two response groups with significant difference in pan-drug chemotherapeutic sensitivity. We used the Boruta feature selection algorithm was used to identify genes of the highest predictive value; the 300 selected genes were enriched primarily for the focal adhesion, ECM-receptor and proteoglycan interaction pathways. Using the selected genes, a deep learning neural network was developed to predict response groups. The high accuracy of the neural network validates our postulate that cell lines with similar gene expression profiles present similar pan-drug chemotherapeutic sensitivity, and it suggests the potential utility of similar combinatorial biomarkers for the selection of potent candidate drugs. Given that not all tumours present with targetable features and are treated with less targeted and consequently more cytotoxic chemotherapies, our computational framework allows for the identification of candidate drugs for treatments that maximize therapeutic response and minimize cytotoxic burden. \vspace{1em}
 
 		% Keywords
 		\noindent {\textbf{Keywords}\\
@@ -119,7 +119,7 @@ With the advent of high-throughput sequencing technology, precision oncology app
 
 Emerging precision oncology approaches have begun to utilize high-throughput technology to potentiate the usage of conventional and less targeted chemotherapy. Given that many of these less targeted and consequently more cytotoxic chemotherapies have broad activity, the primary determinants of chemotherapeutic selection include cancer type and certain molecular markers \cite{adverse}. Nevertheless, it is well established that tumour sensitivity to chemotherapy is heterogeneous both between and within cancer types, which results in a subset of patients that fail to respond to conventional chemotherapy regimens while being subjected to significant side effect burden \cite{adjuvant}. Given that evidence suggests that gene expression can mediate drug response, recent advances have utilized individual and combinatorial gene expression biomarkers to develop predictors of tumour sensitivity to chemotherapeutic compounds \cite{integrated}.
 
-While previous studies have developed predictive biomarkers for specific drugs, the utility of these biomarkers is limited to particular patients and clinical contexts \cite{drug_sense}. That is, these studies are limited in terms of clinical generalizability to different chemotherapeutic regimens. However, a pan-drug predictive biomarker may provide significant clinical utility in the selection of candidate therapies for particular patients. Such a biomarker could be developed if tumours with similar expression have similar drug responses across all chemotherapies, with few exceptions. The availability of pan-cancer cell line databases with \textit{in vitro} drug sensitivity analyses along with accompanying gene expression profiling provides an ideal model for such analyses \cite{gdsc}. However, the majority of previous drug sensitivity predictive biomarkers built on cell line databases have utilized classical machine learning combinatorial techniques, which fail to capture the dimensionality of available transcriptomic data. Furthermore, advanced deep learning algorithmic approaches that are capable of handling such dimensionality often fail to allow interpretability, and consequently require transcriptomic data that is clinically infeasible \cite{ml_oncol}. Thus, deep learning approaches should minimize the number of transcriptomic features selected to maximize both the accuracy and interpretability of such predictive biomarkers.
+While previous studies have developed predictive biomarkers for specific drugs, the utility of these biomarkers is limited to particular patients and clinical contexts \cite{drug_sense}. That is, these studies are limited in terms of clinical generalizability to different chemotherapeutic regimens. However, a pan-drug predictive biomarker may provide significant clinical utility in the selection of candidate therapies for particular patients. Such a biomarker could be developed if tumours with similar expression have similar drug responses across most chemotherapies. The availability of pan-cancer cell line databases with \textit{in vitro} drug sensitivity analyses along with accompanying gene expression profiling provides an ideal model for such analyses \cite{gdsc}. However, the majority of previous drug sensitivity predictive biomarkers built on cell line databases have utilized classical machine learning techniques (ex: k-means clustering, regression), which fail to capture the dimensionality of available transcriptomic data. Furthermore, advanced deep learning algorithmic approaches that are capable of handling such dimensionality often fail to allow interpretability and consequently require transcriptomic data that is clinically infeasible \cite{ml_oncol}. Thus, deep learning approaches should minimize the number of selected transcriptomic features to maximize both the accuracy and interpretability of such predictive biomarkers. This would allow for a more robust pathway functional enrichment, and such analyses would provide a deeper understanding of the relative contributions of the selected transcriptomic features to the deep learning model.
 
 Here we set out to generate a deep learning transcriptomic model for the prediction of pan-drug chemotherapeutic sensitivity across cell lines of all cancer types. If successful, this would demonstrate that gene expression influences chemotherapeutic response across most drugs and further motivate future studies into the development of clinically applicable predictors of candidate chemotherapeutics for tumours of a specific gene expression profile.
 
@@ -128,13 +128,13 @@ Following unsupervised clustering of cell lines into therapeutic response groups
 
 % Materials and Methods
 \section{Methods}
-We developed a deep learning model to accurately classify cancer cell lines into therapeutic response groups using data from the Genomics of Drug Sensitivity in Cancer (GDSC) database \cite{gdsc}. Following data collection and curation, we utilized unsupervised clustering algorithms to define two groups based on chemotherapeutic response. Next, we employed a biologically agnostic feature selection algorithm, Boruta, to select statistically relevant genes for our neural network. These transcriptomic features were fed into a neural network that classifies patients into therapeutic response groups as defined by the clustering algorithms. The neural network architecture was optimized using a grid search and evaluated using 5-fold stratified cross-validation. See Fig. \ref{fig:pipeline} for an overview of the data analysis pipeline. The source code can be found on GitHub: \url{https://github.com/tig3r66/youreka_genes}.
+We developed a deep learning model to accurately classify cancer cell lines into therapeutic response groups using data from the Genomics of Drug Sensitivity in Cancer (GDSC) database \cite{gdsc}. Following data collection and curation, we utilized unsupervised clustering algorithms to define two groups based on chemotherapeutic response. Next, we employed a biologically agnostic feature selection algorithm, Boruta, to select statistically relevant genes for our neural network. These transcriptomic features were fed into a neural network that classifies patients into therapeutic response groups as defined by the clustering algorithms. The neural network architecture was optimized using a grid search and evaluated using 5-fold stratified cross-validation. See Fig. \ref{fig:pipeline} for an overview of the data analysis pipeline. The source code can be found on GitHub: \url{https://github.com/tig3r66/youreka_genes}. \vspace{1em}
 
 
 % flowchart figure
 \begin{figure}[!ht]
 	\centering
-	\begin{tikzpicture}[node distance=5.5em, auto]
+	\begin{tikzpicture}[node distance=6em, auto]
 	% blocks
 	\node [block, text width=20em] (init) {Obtain data from the GDSC consortium (1,110 cell lines, 251 drugs).};
 	\node [block, below of=init, text width=20em, yshift=-1em] (process) {Filter data: retain drugs with $>$80\% data for cell lines (548 cell lines, 117 drugs). Matrix normalization on IC$_{50}$ via z-score.};
@@ -164,7 +164,7 @@ To better understand the impact and predictive ability of transcriptomic dysregu
 \subsection{Identification of pan-cancer therapeutic response cohorts}
 Cell line therapeutic sensitivity matrices were used to evaluate whether conventional clinical criteria could separate patients into previously-defined chemotherapeutic response groups. These conventional clinical criteria included anatomic location and solid versus non-solid tumour status, as well as broadly applicable molecular markers -- TP53 and KRAS mutation status \cite{colorectal, gi, lung, breast}. Cell lines were separated into subgroups based on these criteria and visualized to determine whether these criteria effectively clustered response groups.
 
-Following evaluation of existing classifiers, we attempted to create defined cell line clusters using observed chemotherapeutic response of the pan-cancer cell line samples. We developed a Euclidean distance matrix for the retained cell lines based on their pan-chemotherapy response. This matrix was used to identify the minimum number of clusters capable of representing the therapeutic heterogeneity identified across the cancer cell lines while maintaining significant inter-cluster distance. Following this, k-means clustering was utilized to assign cell line candidates to appropriate therapeutic response cohorts. Generalized differences in chemotherapeutic efficacy between cohorts were visualized using a heatmap generated by the pheatmap package \cite{pheatmap} in R. Separation between clusters was also visualized using principal component analysis with the factoextra package \cite{factoextra} in R. Following the identification of defined clusters, differences in therapeutic efficacy between the identified cohorts were evaluated. Mann-Whitney U tests were utilized to compare IC$_{50}$ values between the groups. False discovery rate (FDR) correction was utilized to correct for multiple comparisons.
+Following evaluation of existing classifiers, we attempted to create defined cell line clusters using observed chemotherapeutic response of the pan-cancer cell line samples. We developed a standardized Euclidean distance matrix for the retained cell lines based on their pan-chemotherapy response. This matrix was used to identify the minimum number of clusters (the elbow method was used as an heuristic for determining the number of clusters) capable of representing the therapeutic heterogeneity identified across the cancer cell lines while maintaining significant inter-cluster distance. Following this, k-means clustering was utilized to assign cell line candidates to appropriate therapeutic response cohorts. Generalized differences in chemotherapeutic efficacy between cohorts were visualized using a heatmap generated by the pheatmap package \cite{pheatmap} in R. The heatmap displayed 2 groups clustered using k-means clustering. Separation between clusters was also visualized using principal component analysis with the factoextra package \cite{factoextra} in R. Following the identification of defined clusters, differences in therapeutic efficacy between the identified cohorts were evaluated. Mann-Whitney U tests were utilized to compare IC$_{50}$ values between the groups. False discovery rate (FDR) correction was utilized to correct for multiple comparisons.
 
 
 % PCA figures
@@ -188,23 +188,23 @@ Following evaluation of existing classifiers, we attempted to create defined cel
 
 
 \subsection{Feature Selection with Boruta}
-In order to develop a transcriptomic model predictive of therapeutic response clusters, we retrieved expression data quantified by the GDSC consortium using the Affymetrix U219 microarray for each candidate cell line. Here, minimally processed CEL files were obtained from ArrayExpress (ascension number E-MTAB-3610) and processed using the affy package \cite{affy} in R. The resulting normalized expression matrix for candidate cell lines was then merged with the existing dataset. This addition resulted in the loss of 7 cell lines (2 from cluster A and 5 from cluster B), resulting in the inclusion of 541 cell lines in model generation. The microarray dataset quantified the expression of 16,382 genes; a model developed from this large feature space is likely to exhibit high multicollinearity and subsequently overfit, compromising the generalizability of the model. In addition, the large feature space limits the efficiency of various feature selection algorithms\footnote{For example, univariate selection or recursive feature elimination.} as well as training and optimizing neural networks. We addressed these issues with the Boruta feature selection algorithm using the BorutaPy package \cite{liu} in Python 3. Boruta is a feature selection algorithm based on Random Forest classification which iteratively removes features that are statistically less significant than a shuffled version of the same feature \cite{kursa}
+In order to develop a transcriptomic model predictive of therapeutic response clusters, we retrieved expression data quantified by the GDSC consortium using the Affymetrix U219 microarray for each candidate cell line. Here, minimally processed CEL files were obtained from ArrayExpress (ascension number E-MTAB-3610) and processed using the affy package \cite{affy} in R. The resulting normalized expression matrix for candidate cell lines was then merged with the existing dataset. This addition resulted in the loss of 7 cell lines (2 from cluster A and 5 from cluster B), resulting in the inclusion of 541 cell lines in model generation. The microarray dataset quantified the expression of 16,382 genes; a model developed from this large feature space is likely to exhibit high multicollinearity and subsequently overfit, compromising the generalizability of the model. In addition, the large feature space limits the efficiency of various feature selection algorithms (for example, univariate selection or recursive feature elimination) as well as training and optimizing neural networks. We addressed these issues with the Boruta feature selection algorithm using the BorutaPy package \cite{liu} in Python 3. Boruta is a feature selection algorithm based on Random Forest classification which iteratively removes features that are statistically less significant than a shuffled version of the same feature \cite{kursa}
 
 
 % neural net evaluation figure
 \begin{figure*}[!ht]
     \centering
     \begin{subfigure}[t]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/confusion_matrix/cm_combined.png}
-    \end{subfigure}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/roc/final_roc.png}
+	\end{subfigure}
 
     \begin{subfigure}[t]{\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Figures/roc/roc_combined.png}
+        \includegraphics[width=\textwidth]{Figures/confusion_matrix/fcm_combined.png}
     \end{subfigure}
 
-    \caption{(\textbf{A}) Confusion matrices for the 1, 5, 10, and 15 hidden layer neural network models. The models classify cell line microarray datasets into chemotherapy response cohorts. (\textbf{B}) ROC curves for 1, 5, 10, and 15 hidden layers neural network models with confidence bands of $\pm 1$ standard error of the mean (sem). Each model was subject to 5-fold stratified cross-validation, and the mean ROC curve across all trials was plotted.}
+    \caption{(\textbf{A}) ROC curves for 1, 5, 10, and 15 hidden layers neural network models. Each model was subject to 5-fold stratified cross-validation on the training set, and the mean ROC curve for the testing set across all trials was plotted. (\textbf{B}) Confusion matrices for the 1, 5, 10, and 15 hidden layer neural network models on the testing set. The threshold for classification determiend using Youden's index (thresholds were 0.17, 0.97, 0.49, and 0.45 for neural networks with 1, 5, 10, and 15 hidden layers respectively). The models classify cell line microarray datasets into chemotherapy response cohorts.}
     \label{fig:nnet}
 \end{figure*}
 
@@ -212,7 +212,9 @@ In order to develop a transcriptomic model predictive of therapeutic response cl
 \subsection{Classification of cell lines using an optimized neural network}
 The neural network was constructed using the Tensorflow Keras sequential deep learning API \cite{keras} in Python 3. The model underwent multiple instances of optimization, beginning with the depth of the network (1, 5, 10, and 15 hidden layers were evaluated). The rectified linear unit (ReLu) was chosen as the neuronal activation function for input and hidden layers. The output layer used a sigmoid activation for binary classification of inputs (i.e., chemotherapeutic response groups). The neural network was carefully monitored for overfitting on the training dataset. To minimize overfitting, we applied L2 kernel regularization ($\lambda=10^{-3}$), batch normalization, and dropout layers with a 0.3 dropout rate to each hidden layer.
 
-The dataset was randomly segregated using the Pareto principle \cite{pareto}; we reserved 80\% of the data for training and the remaining 20\% for validation. Model selection was performed by hyperparameter tuning using a grid search followed by 5-fold stratified cross-validation (Table \ref{tab:params}). We performed a grid search with 3-fold cross-validation on the training data (80\% of the dataset; 432 training samples, 541 overall) to determine the parameters that minimize the binary cross-entropy loss function. GridSearchCV from the scikit-learn library \cite{scikit-learn} was used to iterate through combinations of epochs, batch size, neurons per hidden layer, L2 regularization penalty, optimizer, and kernel initializer to find the optimal model (Table \ref{tab:params}). To prevent class imbalance during training, we used the Synthetic Minority Oversampling Technique (SMOTE) from the imblearn package \cite{imblearn} for Python 3. Each model’s performance on the testing dataset was evaluated by the Area Under Curve (AUC) value of the receiver operating characteristic (ROC) curve.
+The dataset was randomly segregated using the Pareto principle \cite{pareto}; we reserved 80\% of the data for training and the remaining 20\% for testing. Model selection was performed by hyperparameter tuning using a grid search followed by 5-fold stratified cross-validation on the training data (Table \ref{tab:params}). We performed a grid search with 3-fold cross-validation on the training data (80\% of the dataset; 432 training samples, 541 overall) to determine the parameters that minimize the binary cross-entropy loss function. GridSearchCV from the scikit-learn library \cite{scikit-learn} was used to iterate through combinations of epochs, batch size, neurons per hidden layer, L2 regularization penalty, optimizer, and kernel initializer to find the optimal model (Table \ref{tab:params}). To prevent class imbalance during training, we used the Synthetic Minority Oversampling Technique (SMOTE) from the imblearn package \cite{imblearn} for Python 3. Each model’s performance on the testing dataset was evaluated by the Area Under Curve (AUC) value of the receiver operating characteristic (ROC) curve.
+
+Following grid search and cross-validation, we evaluated the performance of our model on the testing data. Youden's index from the ROC curves corresponding to each neural network was used to determine the optimal threshold to classify cell lines into chemotherapeutic response groups. The formula for Youden's index is defined as $$J \doteq \text{sensitivity} - \text{specificity} - 1$$ All indices were obtained from the ROC curves by an iterative search for the maximum $J$. That is, $$J = \text{argmax(TPR} - \text{FPR)}$$ where TPR and FPR are arrays containing the true positive and false positive fate corresponding to each point on the ROC curve. The threshold corresponding to $J$ was used to classify cell lines.
 
 
 % Results
@@ -228,11 +230,13 @@ The Boruta algorithm was used to select genes that are estimated to have the gre
 
 
 \subsection{A neural network with 10 hidden layers accurately classifies patients into responder and non-responder cohorts}
-Unsupervised learning in the form of the k-means clustering of the cancer cell line transcriptomes indicated substantially different responses to chemotherapies. Using these distinct therapy response cohorts, we developed a deep learning binary classifier to predict drug response groups based on transcriptomic data. We analyzed four neural network architectures: 1, 5, 10, and 15 hidden layers (Fig. \ref{fig:neural_vis}). Hyperparameter optimization via grid search returned similar results for each model: 25 epochs, batch size of 16, 100 neurons per hidden layer, L2 kernel regularization with $\lambda=10^{-3}$, stochastic gradient descent as the optimizer, and a normal kernel initializer. Following this, we validated the various architectures with 5-fold stratified cross-validation.
+Unsupervised learning via k-means clustering of the cancer cell line transcriptomes indicated substantially different responses to chemotherapies. Since centroids are initially randomly placed, we ran the algorithm several times, and each iteration returned similar results. Using these distinct therapy response cohorts, we developed a deep learning binary classifier to predict drug response groups based on transcriptomic data. We analyzed four neural network architectures: 1, 5, 10, and 15 hidden layers (Fig. \ref{fig:neural_vis}). Hyperparameter optimization via grid search returned similar results for each model: 50 epochs, batch size of 32, 50 neurons per hidden layer, L2 kernel regularization with $\lambda=10^{-3}$, Adam as the optimizer, and a normal kernel initializer. Following this, we validated the various architectures with 5-fold stratified cross-validation.
 
-The neural network with 1 hidden layer performed poorly with 71.6\% accuracy. However, the 1 hidden layer model had the highest precision 95.5\% of the models (92.6\% for 5 hidden layers, 87.7\% for 10 hidden layers, 87.7\% for 15 hidden layers). The poor accuracy for the 1 hidden layer model was accounted for with a low negative predictive value (55.4\%; 80.5\% for 5 hidden layers, 100\% for 10 hidden layers, 100\% for 15 hidden layers). It was determined that the most accurate model was the neural network with 10 hidden layers (90.8\% accuracy; 71.6\% for 1 hidden layer, 88.1\% for 5 hidden layers, 85.3\% for 15 hidden layers; Fig. \ref{fig:nnet}).
+On the training data, the neural network with 5 hidden layers performed the best on the validation fold with 93.1\% accuracy (88.8\% for 1 hidden layer, 84.5\% for 10 hidden layers, 56.9\% for 15 hidden layers). The mean AUC across the 5 folds were $0.965 \pm 0.017$, $0.957 \pm 0.0144$, $0.913 \pm 0.026$, and $0.515 \pm 0.115$ for the neural networks with 1, 5, 10, and 15 hidden layers respectively.
 
-An ROC curve was plotted for each of the neural network variants as an alternative evaluative method (Fig. \ref{fig:nnet}). The relative ratio between the model’s false positive rate and its true positive rate were averaged between 5 stratified k-folds. The mean AUC for the 5 trials was used to compare the four network architectures. However, the differences between the various architectures for AUC was not significantly different. Consequently, confusion matrices (Fig. \ref{fig:nnet}) and associated misclassification rates were used to pick the optimal model. The neural net with 10 hidden layers demonstrated the best performance overall with a 90.8\% accuracy.
+An ROC curve was plotted for each of the neural network, and the threshold which maximizes Youden's index was determined (Fig. \ref{fig:nnet}). Here the relative ratio between the model’s false positive rate and its true positive rate were averaged between 5 stratified k-folds. The mean AUC for the 5 trials was used to compare the four network architectures. While there were no significant differences between AUC for the 1, 5, and 10 hidden layer models, the model with 15 hidden layers performed significantly worse compared to the rest.
+
+The results were different for the testing data. The neural network with 10 hidden layers performed the best with an accuracy of 89.0\% (82.6\% for 1 hidden layer, 73.4\% for 5 hidden layers, and 57.8\% for 15 hidden layers). The AUC was 0.885, 0.884, 0.904, and 0.583 for the neural networks with 1, 5, 10, and 15 hidden layers respectively. Of note, the neural network with 15 hidden layers classified all cell lines into the responder group. The weighted F1 scores for the neural networks with 1, 5, 10, and 15 layers were 0.83, 0.73, 0.89, and 0.42 respectively.
 
 % gene annotation figure
 \begin{figure}[t]
@@ -249,25 +253,27 @@ It is well known that there is substantial heterogeneity concerning chemotherape
 
 Using cell line chemotherapeutic efficacy obtained from the GDSC consortium, we employed unsupervised clustering techniques to identify two defined therapeutic response groups with significantly different responses to a multitude of standard chemotherapies. We demonstrate that commonly-used clinical criteria to predict chemotherapeutic performance -- such as anatomical location and morphologic subtype of cell lines, as well as TP53 and KRAS mutation status -- failed to identify defined clusters of cells with similar therapeutic responses (Fig. \ref{fig:overall_pca}). The consistent poor separability using these criteria and the relatively homogeneous distribution of cell responses to chemotherapeutics across major anatomical regions provides evidence for the utility of a pan-drug predictive biomarker. Given the separability and the large feature space of the microarray data, a neural network was developed to classify cell lines into therapeutic response groups. This model may inform clinicians and researchers of the predicted therapeutic response of their patients to various chemotherapies.
 
-Following the determination of two defined chemotherapeutic groups based on the GDSC dataset, we used a biologically agnostic feature selection algorithm, Boruta, to reduce the original set of 16,382 genes to a subset of 300 genes and to limiting preliminary bias due to multicollinearity in the model. The genes were then fed into neural networks, which were optimized using a grid search (Table \ref{tab:params}). Each network was carefully monitored for overfitting during training (loss value observed to decrease during training across all models). To minimize overfitting, we applied L2 kernel regularization ($\lambda=10^{-3}$), batch normalization, and dropout layers with a 0.3 dropout rate to each hidden layer. To account for imbalanced classes during the cross-fold evaluations, we utilized SMOTE and stratified k-folds. We determined from confusion matrices and ROC curve analysis that the best network architecture utilized 10 hidden layers, and demonstrated a 90.8\% accuracy in classifying response groups (Fig. \ref{fig:nnet}). This validates our postulate that gene expression is a prime determinant of chemotherapeutic response, and that cell lines of similar gene expression profile respond similarly to most chemotherapies.
+Following the determination of two defined chemotherapeutic groups based on the GDSC dataset, we used a biologically agnostic feature selection algorithm, Boruta, to reduce the original set of 16,382 genes to a subset of 300 genes and to limiting preliminary bias due to multicollinearity in the neural network models. The genes were then fed into neural networks, which were optimized using a grid search (Table \ref{tab:params}). Each network was carefully monitored for overfitting during training (loss value on the validation set was observed to decrease during training across all models). To minimize overfitting, we applied L2 kernel regularization ($\lambda=10^{-3}$), batch normalization, and dropout layers with a 0.3 dropout rate to each hidden layer. To account for imbalanced classes during the cross-fold evaluations, we utilized SMOTE and stratified k-folds. We determined from confusion matrices and ROC curve analysis that the best network architecture utilized 10 hidden layers, and demonstrated a 89.0\% accuracy in classifying response groups (Fig. \ref{fig:nnet}). This validates our postulate that gene expression is a prime determinant of chemotherapeutic response, and that cell lines of similar gene expression profile respond similarly to most chemotherapies.
 
+\Large{\textbf{FIX PARA BELOW}}\\
+\normalsize
 The comparatively lower accuracy of the neural network with 1 hidden layer (71.8\%) suggests that the therapeutic response cohorts cannot be separated by a linear classifier and that classical machine learning techniques are insufficient to capture the complexity of the dataset. Furthermore, the decrease in accuracy from 10 hidden layers (90.8\%) to 15 hidden layers (85.3\%) indicates overfitting. To this end, a 10 hidden layer model is the ideal depth to analyze the GDSC data. Interestingly, there is no significant difference between the mean AUC for these models (Fig. \ref{fig:nnet}). Given this finding, the confusion matrices were used to select the 10 hidden layer deep learning architecture as our model of choice.
 
 The deep learning transcriptomic model consists of 300 genes, with KEGG pathway enrichment suggesting that predictive genes are associated with numerous pathways, most notably PI3K signalling and focal adhesion. Interestingly, there is a growing body of literature that suggests that PI3K/Akt pathway dysregulation may be associated with chemotherapeutic resistance in numerous different cancer and treatment contexts \cite{huang_2009}. Several studies have identified increases in Akt signalling in cancer cell lines exposed to chemotherapy and radiotherapy \cite{mapk, wort, phos}. Moreover, significant increases in Akt have been identified in chemoresistant and radioresistant cancer models \cite{cholangio}. Similarly, several studies have identified focal adhesion as a potential protective mechanism for various cancer cells. In fact, inhibition of particular integrin isoforms has been shown to increase the susceptibility of various cancer cell lines to conventional chemo/radiotherapies \cite{focal_adhesion}. Our results provide further evidence that dysregulation of PI3K signalling and focal adhesion may play a role in chemotherapy resistance in a pan-cancer context.
 
 A major limitation of our study was the availability of large datasets to train our model. Here we faced a $p$ $\gg$ $n$ problem as machine learning models expect that the number of observations $n$ will be much larger than the number of features $p$. To minimize this bias, we applied the Boruta algorithm to reduce our 16,382 genes by 541 cell lines dataset to a 300 by 541 matrix. The algorithm has been shown in various studies to be an effective feature selection method in high dimensional omics datasets \cite{boruta}.
 
-Future investigations will look to validate the predictive ability of the model to categorize chemotherapeutic response in various cancer types using the current transcriptomic signature. It is likely that the model accuracy will vary between therapy targets, and as such, further studies can make use of our project pipeline to create a stratified model whereby the drug class and target are additional inputs. In addition, biochemical features of gene targets may provide additional insights, especially for interpretability of the neural network output. It may also be interesting to select relevant genes using a different feature selector given that Boruta specifically operates on patterns of statistical relationships rather than biological relationships. Our use of Boruta was motivated by its efficacy demonstrated by prior studies of the algorithm as compared to other feature selectors \cite{boruta, deep_cell}. It is possible that a feature selection method informed by gene function and linkage disequilibrium could yield a different set of relevant genes.
+Future investigations will look to validate the predictive ability of the model to categorize chemotherapeutic response in various cancer types using the current transcriptomic signature. It is likely that the model accuracy will vary between therapy targets, and as such, further studies can make use of our project pipeline to create a stratified model whereby the drug class and target are additional inputs. In addition, biochemical features of gene targets may provide additional insights, especially for interpretability of the neural network output. It may also be interesting to select relevant genes using a different feature selector given that Boruta specifically operates on patterns of statistical relationships rather than biological relationships. As such, Boruta is sensitive to hyperparameter values. Our use of Boruta was primarily motivated by its efficacy demonstrated by prior studies of the algorithm as compared to other feature selectors \cite{boruta, deep_cell}. It is possible that a feature selection method informed by gene function and linkage disequilibrium could yield a different set of relevant genes.
 
 
 % Conclusions
 \section{Conclusions}
-Using transcriptomic data from pan-cancer cell lines, two chemotherapeutic response clusters were identified via unsupervised learning in the form of k-means clustering. A feature selection algorithm was used to select a 300 gene subset which served as inputs to multiple neural networks. We determined that the network with 10 hidden layers was the most accurate model, producing a binary classifier to predict cell line therapy response with 90.8\% accuracy. Future studies will investigate the efficacy of our model to predict chemotherapy response in various cancer types and treatment contexts.
+Using transcriptomic data from pan-cancer cell lines, two chemotherapeutic response clusters were identified via unsupervised learning in the form of k-means clustering. The Boruta feature selection algorithm was used to select a 300 gene subset which served as inputs to multiple neural networks. We determined that a network with 10 hidden layers was the most accurate model, producing a binary classifier to predict cell line therapy response with 89.0\% accuracy. Future studies will investigate the efficacy of our model to predict chemotherapy response in various cancer types and treatment contexts.
 
 
 % Acknowledgements
 \section*{Acknowledgements}
-We wish to acknowledge the STEM Fellowship for organizing the 2020 Big Data Challenge, as well as Roche, SAS, Canadian Science Publishing, Digital Science, Altmetric, and Overleaf for their contributions that enabled this competition. We would like to thank our mentor, Dr. Daiva Nielsen for her feedback on our paper. We would also like to acknowledge Matthew Pietrosanu for his inputs.
+We wish to acknowledge the STEM Fellowship for organizing the 2020 Big Data Challenge, as well as Roche, SAS, Canadian Science Publishing, Digital Science, Altmetric, and Overleaf for their contributions that enabled this competition. We would like to thank our mentor, Dr. Daiva Nielsen for her feedback on our paper. We would also like to acknowledge Matthew Pietrosanu, Boya Peng, Danyi Liu, Stephen Styles, and Ree Yang for their inputs.
 
 
 \bibliography{bibliography}
@@ -291,19 +297,19 @@ We wish to acknowledge the STEM Fellowship for organizing the 2020 Big Data Chal
         \foreach \m/\l [count=\y] in {1,2,3,4,5,missing,300}
             \node [every neuron/.try, neuron \m/.try] (input-\m) at (0,-\y) {\lmao{\l}};
         
-        \foreach \m/\l [count=\y] in {1,missing,100}
+        \foreach \m/\l [count=\y] in {1,missing,50}
             \node [every neuron/.try, neuron \m/.try] (hidden-\m) at (1.5,-1.75-\y) {\foo{\l}};
 
-        \foreach \m/\l [count=\y] in {1,missing,100}
+        \foreach \m/\l [count=\y] in {1,missing,50}
             \node [every neuron/.try, neuron \m/.try] (hidden1-\m) at (3,-1.75-\y) {\hehe{\l}};
     
-        \foreach \m/\l [count=\y] in {1,missing,100}
+        \foreach \m/\l [count=\y] in {1,missing,50}
             \node [every neuron/.try, neuron \m/.try] (hidden2-\m) at (4.5,-1.75-\y) {\hehetwo{\l}};
     
-        \foreach \m/\l [count=\y] in {1,missing,100}
+        \foreach \m/\l [count=\y] in {1,missing,50}
             \node [every neuron/.try, neuron \m/.try] (hidden3-\m) at (6,-1.75-\y) {\hehethree{\l}};
             	
-        \foreach \m/\l [count=\y] in {1,missing,100}
+        \foreach \m/\l [count=\y] in {1,missing,50}
 			\node [every neuron/.try, neuron \m/.try] (hidden4-\m) at (7.5,-1.75-\y) {\hehefour{\l}};
     
         \foreach \m/\l [count=\y] in {1}
@@ -313,31 +319,31 @@ We wish to acknowledge the STEM Fellowship for organizing the 2020 Big Data Chal
     
     	% input to hidden 1
         \foreach \l [count=\i] in {1,2,3,4,5,300}
-            \foreach \k [count=\j] in {1,100}
+            \foreach \k [count=\j] in {1,50}
               \draw [->] (input-\l) -- (hidden-\k);
    
     	% hidden 1 to hidden 2
-        \foreach \l [count=\i] in {1,100}
-            \foreach \k [count=\j] in {1,100}
+        \foreach \l [count=\i] in {1,50}
+            \foreach \k [count=\j] in {1,50}
               \draw [->] (hidden-\l) -- (hidden1-\k);
     
     	% hidden 2 to hidden 3
-        \foreach \l [count=\i] in {1,100}
-            \foreach \k [count=\j] in {1,100}
+        \foreach \l [count=\i] in {1,50}
+            \foreach \k [count=\j] in {1,50}
               \draw [->] (hidden1-\l) -- (hidden2-\k);
     
     	% hidden 3 to hidden 4
-        \foreach \l [count=\i] in {1,100}
-            \foreach \k [count=\j] in {1,100}
+        \foreach \l [count=\i] in {1,50}
+            \foreach \k [count=\j] in {1,50}
               \draw [->] (hidden2-\l) -- (hidden3-\k);
               
     	% hidden 4 to hidden 5
-		\foreach \l [count=\i] in {1,100}
-		\foreach \k [count=\j] in {1,100}
+		\foreach \l [count=\i] in {1,50}
+		\foreach \k [count=\j] in {1,50}
 		\draw [->] (hidden3-\l) -- (hidden4-\k);
     
     	% hidden 5 to output
-        \foreach \l [count=\i] in {1,100}
+        \foreach \l [count=\i] in {1,50}
             \foreach \k [count=\j] in {1}
               \draw [->] (hidden4-\l) -- (output-\k);
 
@@ -350,18 +356,38 @@ We wish to acknowledge the STEM Fellowship for organizing the 2020 Big Data Chal
     \label{fig:neural_vis}
 \end{figure*}
 
+
+% neural net evaluation figure
+\begin{figure*}[!ht]
+	\centering
+	\begin{subfigure}[t]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/confusion_matrix/cm_combined.png}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/roc/cv_roc.png}
+	\end{subfigure}
+	
+	\caption{(\textbf{A}) Confusion matrices for the 1, 5, 10, and 15 hidden layer neural network models on the validation set. The models classify cell line microarray datasets into chemotherapy response cohorts. (\textbf{B}) ROC curves for 1, 5, 10, and 15 hidden layers neural network models with confidence bands of $\pm 1$ standard error of the mean (sem). Each model was subject to 5-fold stratified cross-validation on the training set, and the mean ROC curve for the validation set across all trials was plotted.}
+	\label{fig:nnet_train}
+\end{figure*}
+
+\clearpage
+
 \subsection{Tables}
-\begin{table*}[ht]
-    \caption{Grid search parameters to optimize all implemented neural network architectures (1, 5, 10, and 15 hidden layers). Each grid search underwent 3-fold cross-validation on the training data. Optimal parameters: 25 epochs, batch size of 16, 100 neurons, $\lambda=10^{-3}$, stochastic gradient descent (sgd) as optimizer, normal kernel initializer.}
+\begin{table*}[h]
+    \caption{Grid search parameters to optimize all implemented neural network architectures (1, 5, 10, and 15 hidden layers). Each grid search underwent 3-fold cross-validation on the training data. Optimal parameters: 25 epochs, batch size of 16, 100 neurons, $\lambda=10^{-3}$, Adam as optimizer, normal kernel initializer.}
     \centering
     \label{tab:params}
     \begin{tabular}{l l l l l l}
         \toprule
         Epochs & Batches & Neurons & $\lambda$ (L2 reg) & Optimizer & Kernel initializer \\
         \midrule
-        25 & 16 & 100 & 1e-4 & Sgd & Normal \\
-        50 & 32 & 200 & 1e-3 & Adagrad & Uniform \\
-        75 & 64 & 300 & 1e-2 & Adam & Glorot uniform \\
+        25 & 16 & 50 & 1e-4 & Sgd & Normal \\
+        50 & 32 & 100 & 1e-3 & Adagrad & Uniform \\
+        75 & 64 & 150 & 1e-2 & Adam & Glorot uniform \\
         \bottomrule
     \end{tabular}
 \end{table*}
