@@ -1,0 +1,32 @@
+Gene Symbol,Name,Tumour Types(Somatic),Tumour Types(Germline),Role in Cancer
+MYB,v-myb myeloblastosis viral oncogene homolog,adenoid cystic carcinoma,NA,"oncogene, fusion"
+PRKCB,protein kinase C beta,adult T-cell lymphoma-leukaemia,NA,NA
+RPL22,ribosomal protein L22 (EAP),"AML, CML",NA,"TSG, fusion"
+RAD21,RAD21 homolog (S. pombe),"AML, endometrium, colorectal, lung",NA,"oncogene, TSG"
+ARID1A,AT rich interactive domain 1A (SWI-like),"clear cell ovarian carcinoma, RCC, breast",NA,"TSG, fusion"
+CCND1,cyclin D1,"CLL, B-ALL, breast",NA,"oncogene, fusion"
+BCL9L,B-cell CLL/lymphoma 9-like,"colorectal cancer, endometrial carcinoma, gastric cancer",NA,"oncogene, TSG"
+SMAD3,SMAD family member 3,"colorectal carcinoma, oral squamous cell carcinoma",NA,TSG
+EZH2,enhancer of zeste homolog 2,DLBCL,NA,"oncogene, TSG"
+WWTR1,WW domain containing transcription regulator 1,epithelioid haemangioendothelioma,NA,"oncogene, fusion"
+EGFR,"epidermal growth factor receptor (erythroblastic leukemia viral (v-erb-b) oncogene homolog, avian)","glioma, NSCLC",NSCLC,oncogene
+ITGAV,integrin subunit alpha V,large intestine carcinoma,NA,NA
+LPP,LIM domain containing preferred translocation partner in lipoma,"lipoma, leukaemia",NA,"oncogene, fusion"
+RBM10,RNA binding motif protein 10,lung adenocarcinoma,NA,TSG
+IGF2BP2,insulin like growth factor 2 mRNA binding protein 2,lymphoma,NA,TSG
+LATS2,large tumor suppressor kinase 2,malignant mesothelioma,NA,TSG
+UBR5,ubiquitin protein ligase E3 component n-recognin 5,"mantle cell lymphoma, gastric, colorectal",NA,oncogene
+BLM,Bloom Syndrome,NA,"leukaemia, lymphoma, skin squamous cell, other tumour types",TSG
+EXT1,multiple exostoses type 1 gene,NA,"exostoses, osteosarcoma","TSG, fusion"
+NACA,nascent-polypeptide-associated complex alpha polypeptide,NHL,NA,fusion
+RHOH,ras homolog family member H,NHL,NA,"TSG, fusion"
+BCL2,B-cell CLL/lymphoma 2,"NHL, CLL",NA,"oncogene, fusion"
+SDC4,syndecan 4,NSCLC,NA,fusion
+NONO,"non-POU domain containing, octamer-binding",papillary renal,NA,fusion
+MET,met proto-oncogene (hepatocyte growth factor receptor),"papillary renal, head-neck squamous cell",papillary renal,oncogene
+EPAS1,endothelial PAS domain protein 1,"paraganglioma, pheochromocytoma, central nervous system hemangioblastomas",NA,"oncogene, TSG"
+VHL,von Hippel-Lindau syndrome gene,"renal, haemangioma, pheochromocytoma","renal, haemangioma, pheochromocytoma",TSG
+CLIP1,CAP-GLY domain containing linker protein 1,Spitzoid tumour,NA,fusion
+LMNA,lamin A/C,Spitzoid tumour,NA,fusion
+MED12,mediator complex subunit 12,"uterine leiomyoma, fibroadenoma, phyllodes tumour",NA,TSG
+CXCR4,C-X-C motif chemokine receptor 4,WM,NA,oncogene
